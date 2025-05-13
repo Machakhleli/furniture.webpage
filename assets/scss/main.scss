@@ -1,0 +1,17 @@
+@import "./mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    @include boxSize(100%, 10.125rem);
+ 
+    .header-top-wrapper{
+        @include boxSize(76.25rem, 26%);
+        @include flex(space-between, center);
+        margin: 0 auto;
+    }
+    
+}
