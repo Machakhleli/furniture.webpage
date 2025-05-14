@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +6,87 @@
 
 #header {
   width: 100%;
-  height: 10.125rem;
+  height: 162px;
+  font-family: "Sora", sans-serif;
 }
 #header .header-top-wrapper {
-  width: 76.25rem;
+  width: 1220px;
   height: 26%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 30px auto 10px;
+}
+#header .header-top-wrapper .logo {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 5px;
+  gap: 16px;
+}
+#header .header-top-wrapper .logo a {
+  text-decoration: none;
+}
+#header .header-top-wrapper .logo img {
+  width: 54px;
+  height: 100%;
+}
+#header .header-top-wrapper .logo span {
+  font-family: "Sora", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #0b3954;
+}
+#header .header-top-wrapper .search-bar {
+  width: 754px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#header .header-top-wrapper .search-bar img {
+  position: absolute;
+  left: 5.9375rem;
+}
+#header .header-top-wrapper .search-bar input[type=search] {
+  width: 578px;
+  height: 100%;
+  font-family: "Sora", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 0.3125rem;
+  padding: 10px 10px 10px 40px;
+}
+#header .header-top-wrapper .user-side-container {
+  width: 165px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .header-bottom-wrapper {
+  width: 1220px;
+  height: 48%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
+}
+#header .header-bottom-wrapper .furniture-types {
+  width: 9.25rem;
+  height: 3.75rem;
+  text-align: center;
+}
+#header .header-bottom-wrapper .furniture-types .furniture-names {
+  width: 3.75rem;
+  height: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

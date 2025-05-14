@@ -1,17 +1,69 @@
 @import "./mixins";
+@import "./fonts";
+@import "./variables";
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#header{
-    @include boxSize(100%, 10.125rem);
- 
-    .header-top-wrapper{
-        @include boxSize(76.25rem, 26%);
-        @include flex(space-between, center);
-        margin: 0 auto;
+#header {
+  @include boxSize(100%, 162px);
+  font-family: "Sora", sans-serif;
+  .header-top-wrapper {
+    @include boxSize(1220px, 26%);
+    @include flex(space-between, center);
+    margin: 30px auto 10px;
+    .logo {
+      @include boxSize(300px, 100%);
+      @include flex(left, center);
+      padding: 0 5px;
+      gap: 16px;
+      a {
+        text-decoration: none;
+      }
+      img {
+        @include boxSize(54px, 100%);
+      }
+      span {
+        @include primaryFont(bold, 24px);
+        color: $mainColor;
+      }
     }
-    
+    .search-bar {
+      @include boxSize(754px, 100%);
+      @include flex(center, center);
+      position: relative;
+      img {
+        position: absolute;
+        left: 5.9375rem;
+      }
+      input[type="search"] {
+        @include boxSize(578px, 100%);
+        @include primaryFont(500, 16px);
+        background-color: #f5f5f5;
+        outline: none;
+        border: none;
+        border-radius: 0.3125rem;
+        padding: 10px 10px 10px 40px;
+      }
+    }
+    .user-side-container {
+      @include boxSize(165px, 100%);
+      @include flex(space-between, center);
+    }
+  }
+  .header-bottom-wrapper {
+    @include boxSize(1220px, 48%);
+    @include flex(space-between, center);
+    margin: 0 auto;
+    .furniture-types {
+      @include boxSize(9.25rem, 3.75rem);
+      text-align: center;
+      .furniture-names {
+        @include boxSize(3.75rem, 0.875rem);
+        @include flex(space-between, center);
+      }
+    }
+  }
 }
