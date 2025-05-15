@@ -1,0 +1,15 @@
+#hero-section {
+  @include boxSize(100%, calc(100vh - (100vh -46.25rem)));
+  @include flex(center, center);
+  background-color: color(#f9f9f9, 0%);
+  .hero-bg {
+    @include boxSize(90%, calc(100vh - (100vh - 41.875rem)));
+    @include flex(center, center);
+    background-color: color($mainColor, 0%);
+    border-radius: 2rem;
+    .main-content-container {
+      @include boxSize(68%, calc(100vh - (100vh - 41.875rem)));
+      background: url(../../media/hero-section/main-photo.svg);
+    }
+  }
+}

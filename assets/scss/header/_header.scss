@@ -1,0 +1,112 @@
+#header {
+  @include boxSize(100%, 10.125rem);
+  font-family: "Sora", sans-serif;
+  .header-top-wrapper {
+    @include sectionBox(76.25rem, 26%);
+    margin: 1.875rem auto 0.625rem;
+    .logo {
+      @include boxSize(18.75rem, 100%);
+      @include flex(left, center);
+      padding: 0 0.3125rem;
+      gap: 1rem;
+      a {
+        text-decoration: none;
+      }
+      img {
+        @include boxSize(3.375rem, 100%);
+      }
+      span {
+        @include primaryFont(bold, 1.5rem);
+        color: color($mainColor, 0%);
+      }
+    }
+    .search-bar {
+      @include boxSize(47.125rem, 100%);
+      @include flex(center, center);
+      position: relative;
+      img {
+        position: absolute;
+        left: 5.9375rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      input[type="search"] {
+        @include inputStyles(36.125rem, 500, 1rem);
+      }
+    }
+    .user-side-container {
+      @include boxSize(11.125rem, 100%);
+      @include flex(space-between, center);
+      .user-side-icon {
+        position: relative;
+        cursor: pointer;
+        gap: 0.3125rem;
+        span {
+          position: absolute;
+          top: -0.5rem;
+          left: 0.85rem;
+          @include boxSize(1.0625rem, 1.0625rem);
+          @include primaryFont(400, 0.7rem);
+          background-color: $alternativeColor;
+          border-radius: 50%;
+          text-align: center;
+          color: $thirdColor;
+        }
+      }
+      .total-sum {
+        cursor: pointer;
+        span {
+          color: $mainColor;
+          @include primaryFont(700, 1rem);
+        }
+      }
+    }
+  }
+  .header-bottom-wrapper {
+    @include sectionBox(76.25rem, 48%);
+    margin: 0 auto;
+    .furniture-types {
+      @include boxSize(10.9375rem, 3.75rem);
+      @include verticalFlex(center, center);
+      gap: 0.5rem;
+      border-right: 0.0625rem solid #f5f5f5;
+      &:hover {
+        cursor: pointer;
+        .furniture-names > span {
+          color: $secondaryColor;
+        }
+      }
+      img {
+        @include boxSize(2rem, 2rem);
+      }
+      .furniture-names {
+        @include boxSize(3.75rem, 0.875rem);
+        @include flex(space-between, center);
+        gap: 0.625rem;
+        span {
+          @include primaryFont(600, 1rem);
+          color: color($mainColor, 0%);
+        }
+        img {
+          @include boxSize(0.75rem, 0.75rem);
+        }
+      }
+    }
+    .sales {
+      @include boxSize(10.625rem, 100%);
+      @include verticalFlex;
+      background-color: $secondaryColor;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      gap: 0.5rem;
+      &:hover {
+        background-color: $mainColor;
+        cursor: pointer;
+      }
+      span {
+        color: $thirdColor;
+      }
+    }
+  }
+}
