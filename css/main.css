@@ -159,17 +159,76 @@
 
 #hero-section {
   width: 100%;
-  height: cal100vh;
+  height: calc(100vh - (100vh - 46.25rem));
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
 }
 #hero-section .hero-bg {
+  position: relative;
   width: 90%;
   height: calc(100vh - (100vh - 41.875rem));
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #0b3954;
   border-radius: 2rem;
+}
+#hero-section .hero-bg .hero-content-container {
+  position: absolute;
+  z-index: 5;
+  top: 2.375rem;
+  width: 68%;
+  height: calc(100vh - (100vh - 41.875rem));
+  background: url(../../../assets/media/hero-section/main.photo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+#hero-section .hero-bg .hero-content-container .hero-text {
+  margin: 3.25rem 41.375rem 16.5rem 3.125rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  font-family: "Sora", sans-serif;
+  color: white;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > span {
+  padding: 0.3125rem;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  font-family: "Sora", sans-serif;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper {
+  width: 22.75rem;
+  height: 2.6875rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1.75rem;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > button {
+  width: 9.5rem;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.875rem;
+  font-family: "Sora", sans-serif;
+  border-radius: 6.1875rem;
+  border: none;
+  color: white;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :first-child {
+  background-color: #ffb128;
+  cursor: pointer;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :first-child:hover {
+  background-color: white;
+  color: #ffb128;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :nth-child(2) {
+  color: #ffb128;
 }
 
 * {

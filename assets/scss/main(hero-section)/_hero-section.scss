@@ -1,15 +1,56 @@
 #hero-section {
-  @include boxSize(100%, calc(100vh - (100vh -46.25rem)));
+  @include boxSize(100%, calc(100vh - (100vh - 46.25rem)));
   @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
   .hero-bg {
+    position: relative;
     @include boxSize(90%, calc(100vh - (100vh - 41.875rem)));
     @include flex(center, center);
     background-color: color($mainColor, 0%);
     border-radius: 2rem;
-    .main-content-container {
+    .hero-content-container {
+      position: absolute;
+      z-index: 5;
+      top: 2.375rem;
       @include boxSize(68%, calc(100vh - (100vh - 41.875rem)));
-      background: url(../../media/hero-section/main-photo.svg);
+      background: url(../../../assets/media/hero-section/main.photo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 2rem;
+      .hero-text {
+        margin: 3.25rem 41.375rem 16.5rem 3.125rem;
+        @include mainFontStyle(600, 0.75rem, 1.5625rem, 0%);
+        color: color($thirdColor, 0%);
+        > span {
+          padding: 0.3125rem;
+        }
+        > h1 {
+          @include mainFontStyle(700, 4rem, 4.5rem, 0%);
+        }
+        > .main-buttons-wrapper {
+          @include boxSize(22.75rem, 2.6875rem);
+          @include flex(left, center);
+          gap: 1.75rem;
+          > button {
+            @include boxSize(9.5rem, 100%);
+            @include mainFontStyle(700, 0.875rem, 1.3125rem, 0%);
+            border-radius: 6.1875rem;
+            border: none;
+            color: color($thirdColor, 0%);
+          }
+          > :first-child{
+            background-color: color($secondaryColor, 0%);
+            cursor: pointer;
+            &:hover{
+              background-color: color($thirdColor, 0%);
+              color: color($secondaryColor, 0%);
+            }
+          }
+          >:nth-child(2){
+            color: color($secondaryColor, 0%);
+          }
+        }
+      }
     }
   }
 }

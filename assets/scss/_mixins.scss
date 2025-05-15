@@ -20,6 +20,11 @@
   font-weight: $weight;
   font-size: $size;
 }
+@mixin mainFontStyle($weight, $size, $height, $spacing){
+  @include primaryFont($weight, $size);
+  font-family:"Sora", sans-serif ;
+}
+
 @mixin sectionBox($width, $height, $justify: space-between, $align: center) {
   @include boxSize($width, $height);
   @include flex($justify, $align);
