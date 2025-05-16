@@ -1,6 +1,7 @@
-
-
 @function color($color, $adjustment) {
   @return darken($color, $adjustment);
 }
 
+@function secondaryColor($color, $alpha) {
+  @return rgba($color, $alpha);
+}

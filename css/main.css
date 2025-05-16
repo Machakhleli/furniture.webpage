@@ -177,7 +177,7 @@
 }
 #hero-section .hero-bg .hero-content-container {
   position: absolute;
-  z-index: 5;
+  z-index: 1;
   top: 2.375rem;
   width: 68%;
   height: calc(100vh - (100vh - 41.875rem));
@@ -221,14 +221,115 @@
 }
 #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :first-child {
   background-color: #ffb128;
-  cursor: pointer;
 }
 #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :first-child:hover {
   background-color: white;
   color: #ffb128;
+  cursor: pointer;
 }
 #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :nth-child(2) {
   color: #ffb128;
+}
+#hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > :nth-child(2):hover {
+  cursor: pointer;
+  background-color: #ffb128;
+  color: white;
+}
+#hero-section .hero-bg .furniture-color-btn {
+  width: 4.375rem;
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  border: 0.5px solid #ffffff;
+  cursor: pointer;
+}
+#hero-section .hero-bg .furniture-color-btn:hover {
+  transform: scale(1.1);
+}
+#hero-section .hero-bg .hero-table-btn {
+  position: absolute;
+  z-index: 2;
+  top: 31.25rem;
+  left: 48.75rem;
+}
+#hero-section .hero-bg .hero-table-btn div {
+  position: relative;
+  width: 2.875rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.35px solid #ffffff;
+}
+#hero-section .hero-bg .hero-table-btn div span {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb128;
+  color: white;
+  border-radius: 50%;
+}
+#hero-section .hero-bg .hero-couch-btn {
+  position: absolute;
+  z-index: 2;
+  top: 18.75rem;
+  left: 68.75rem;
+}
+#hero-section .hero-bg .hero-couch-btn div {
+  position: relative;
+  width: 2.875rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.35px solid #ffffff;
+}
+#hero-section .hero-bg .hero-couch-btn div span {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: #ffb128;
+  color: white;
+  border-radius: 50%;
+}
+#hero-section .hero-bg .hero-chair-btn {
+  position: absolute;
+  z-index: 2;
+  top: 500px;
+  right: 400px;
+}
+#hero-section .hero-bg .hero-chair-btn div {
+  position: relative;
+  width: 2.875rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.35px solid #ffffff;
+}
+#hero-section .hero-bg .hero-chair-btn div span {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: #ffb128;
+  color: white;
+  border-radius: 50%;
 }
 
 * {

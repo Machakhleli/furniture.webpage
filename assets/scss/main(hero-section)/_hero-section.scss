@@ -10,7 +10,7 @@
     border-radius: 2rem;
     .hero-content-container {
       position: absolute;
-      z-index: 5;
+      z-index: 1;
       top: 2.375rem;
       @include boxSize(68%, calc(100vh - (100vh - 41.875rem)));
       background: url(../../../assets/media/hero-section/main.photo.png);
@@ -38,17 +38,97 @@
             border: none;
             color: color($thirdColor, 0%);
           }
-          > :first-child{
+          > :first-child {
             background-color: color($secondaryColor, 0%);
-            cursor: pointer;
-            &:hover{
+            &:hover {
               background-color: color($thirdColor, 0%);
               color: color($secondaryColor, 0%);
+              cursor: pointer;
             }
           }
-          >:nth-child(2){
+          > :nth-child(2) {
             color: color($secondaryColor, 0%);
+            &:hover {
+              cursor: pointer;
+              background-color: color($secondaryColor, 0%);
+              color: color($thirdColor, 0%);
+            }
           }
+        }
+      }
+    }
+    .furniture-color-btn {
+      @include boxSize(4.375rem, 4.375rem);
+      @include flex(center, center);
+      background-color: rgba($thirdColor, 0.25);
+      border-radius: 50%;
+      border: 0.5px solid $thirdColor;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .hero-table-btn {
+      position: absolute;
+      z-index: 2;
+      top: 31.25rem;
+      left: 48.75rem;
+      div {
+        position: relative;
+        @include boxSize(2.875rem, 2.875rem);
+        @include flex(center, center);
+        border-radius: 50%;
+        border: 0.35px solid$thirdColor;
+        span {
+          @include boxSize(1.5rem, 1.5rem);
+          @include flex(center, center);
+          background-color: color($secondaryColor, 0%);
+          color: color($thirdColor, 0%);
+          border-radius: 50%;
+        }
+      }
+    }
+    .hero-couch-btn {
+      position: absolute;
+      z-index: 2;
+      top: 18.75rem;
+      left: 68.75rem;
+      div {
+        position: relative;
+        @include boxSize(2.875rem, 2.875rem);
+        @include flex(center, center);
+        border-radius: 50%;
+        border: 0.35px solid$thirdColor;
+        span {
+          position: absolute;
+          @include boxSize(1.5rem, 1.5rem);
+          @include flex(center, center);
+          z-index: 10;
+          background-color: color($secondaryColor, 0%);
+          color: color($thirdColor, 0%);
+          border-radius: 50%;
+        }
+      }
+    }
+    .hero-chair-btn {
+      position: absolute;
+      z-index: 2;
+      top: 500px;
+      right: 400px;
+      div {
+        position: relative;
+        @include boxSize(2.875rem, 2.875rem);
+        @include flex(center, center);
+        border-radius: 50%;
+        border: 0.35px solid$thirdColor;
+        span {
+          position: absolute;
+          @include boxSize(1.5rem, 1.5rem);
+          @include flex(center, center);
+          z-index: 10;
+          background-color: color($secondaryColor, 0%);
+          color: color($thirdColor, 0%);
+          border-radius: 50%;
         }
       }
     }
