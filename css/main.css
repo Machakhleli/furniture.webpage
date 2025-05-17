@@ -1,40 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap");
 #header {
   width: 100%;
-  height: 10.125rem;
+  height: clamp(6rem, 15vh, 10.1875rem);
   font-family: "Sora", sans-serif;
 }
 #header .header-top-wrapper {
-  width: 76.25rem;
+  width: clamp(18rem, 90vw, 76.25rem);
   height: 26%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.875rem auto 0.625rem;
+  margin: clamp(0.5rem, 3vh, 1.875rem) auto clamp(0.25rem, 1vh, 0.625rem);
 }
 #header .header-top-wrapper .logo {
-  width: 18.75rem;
+  width: clamp(8rem, 40vw, 18.75rem);
   height: 100%;
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 0 0.3125rem;
-  gap: 1rem;
+  padding: 0 clamp(0.25rem, 1vw, 0.3125rem);
+  gap: clamp(0.5rem, 2vw, 1rem);
 }
 #header .header-top-wrapper .logo a {
   text-decoration: none;
 }
 #header .header-top-wrapper .logo img {
-  width: 3.375rem;
+  width: clamp(2rem, 5vw, 3.375rem);
   height: 100%;
 }
 #header .header-top-wrapper .logo span {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   color: #0b3954;
 }
 #header .header-top-wrapper .search-bar {
-  width: 47.125rem;
+  width: clamp(15rem, 60vw, 47.125rem);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -43,16 +44,16 @@
 }
 #header .header-top-wrapper .search-bar img {
   position: absolute;
-  left: 5.9375rem;
+  left: clamp(2rem, 10vw, 5.9375rem);
 }
 #header .header-top-wrapper .search-bar img:hover {
   cursor: pointer;
 }
 #header .header-top-wrapper .search-bar input[type=search] {
-  width: 36.125rem;
+  width: clamp(12rem, 50vw, 36.125rem);
   height: 100%;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   background-color: #f5f5f5;
   outline: none;
   border: none;
@@ -60,7 +61,7 @@
   padding: 0.625rem 0.625rem 0.625rem 2.5rem;
 }
 #header .header-top-wrapper .user-side-container {
-  width: 11.125rem;
+  width: clamp(6rem, 25vw, 11.125rem);
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -69,16 +70,16 @@
 #header .header-top-wrapper .user-side-container .user-side-icon {
   position: relative;
   cursor: pointer;
-  gap: 0.3125rem;
+  gap: clamp(0.25rem, 1vw, 0.3125rem);
 }
 #header .header-top-wrapper .user-side-container .user-side-icon span {
   position: absolute;
   top: -0.5rem;
   left: 0.85rem;
-  width: 1.0625rem;
-  height: 1.0625rem;
+  width: clamp(0.75rem, 1.5vw, 1.0625rem);
+  height: clamp(0.75rem, 1.5vw, 1.0625rem);
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: clamp(0.625rem, 1.5vw, 0.7rem);
   background-color: #333333;
   border-radius: 50%;
   text-align: center;
@@ -90,19 +91,19 @@
 #header .header-top-wrapper .user-side-container .total-sum span {
   color: #0b3954;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 #header .header-bottom-wrapper {
-  width: 76.25rem;
-  height: 48%;
+  width: clamp(18rem, 90vw, 76.25rem);
+  height: 74%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 }
 #header .header-bottom-wrapper .furniture-types {
-  width: 10.9375rem;
-  height: 3.75rem;
+  width: clamp(6rem, 20vw, 10.9375rem);
+  height: clamp(2rem, 8vh, 3.75rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,29 +118,30 @@
   color: #ffb128;
 }
 #header .header-bottom-wrapper .furniture-types img {
-  width: 2rem;
-  height: 2rem;
+  width: clamp(1.5rem, 4vw, 2rem);
+  height: clamp(1.5rem, 4vw, 2rem);
 }
 #header .header-bottom-wrapper .furniture-types .furniture-names {
-  width: 3.75rem;
-  height: 0.875rem;
+  width: clamp(2.5rem, 8vw, 3.75rem);
+  height: clamp(0.75rem, 1.5vw, 0.875rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.625rem;
+  gap: clamp(0.25rem, 1vw, 0.625rem);
+  padding-bottom: 2rem;
 }
 #header .header-bottom-wrapper .furniture-types .furniture-names span {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   color: #0b3954;
 }
 #header .header-bottom-wrapper .furniture-types .furniture-names img {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: clamp(0.5rem, 1.5vw, 0.75rem);
+  height: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 #header .header-bottom-wrapper .sales {
   width: 10.625rem;
-  height: 100%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,7 +161,7 @@
 
 #hero-section {
   width: 100%;
-  height: calc(100vh - (100vh - 46.25rem));
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +170,7 @@
 #hero-section .hero-bg {
   position: relative;
   width: 90%;
-  height: calc(100vh - (100vh - 41.875rem));
+  height: clamp(25rem, 55vh, 48rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,42 +180,47 @@
 #hero-section .hero-bg .hero-content-container {
   position: absolute;
   z-index: 1;
-  top: 2.375rem;
+  top: clamp(1.5rem, 4vh, 2.375rem);
   width: 68%;
-  height: calc(100vh - (100vh - 41.875rem));
+  height: clamp(25rem, 55vh, 41.875rem);
   background: url(../../../assets/media/hero-section/main.photo.png);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 2rem;
 }
 #hero-section .hero-bg .hero-content-container .hero-text {
-  margin: 3.25rem 41.375rem 16.5rem 3.125rem;
+  margin: clamp(1rem, 4vw, 3.25rem) clamp(1rem, 20vw, 41.375rem) clamp(2rem, 10vh, 16.5rem) clamp(1rem, 5vw, 3.125rem);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
   font-family: "Sora", sans-serif;
   color: white;
 }
 #hero-section .hero-bg .hero-content-container .hero-text > span {
   padding: 0.3125rem;
+  display: block;
+  font-size: clamp(0.625rem, 1.5vw, 0.875rem);
 }
 #hero-section .hero-bg .hero-content-container .hero-text > h1 {
   font-weight: 700;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-family: "Sora", sans-serif;
+  margin: clamp(0.5rem, 2vh, 1rem) 0;
 }
 #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper {
-  width: 22.75rem;
-  height: 2.6875rem;
+  width: 100%;
+  max-width: 22.75rem;
+  height: clamp(2rem, 6vh, 2.6875rem);
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 1.75rem;
+  gap: clamp(1rem, 3vw, 1.75rem);
 }
 #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > button {
-  width: 9.5rem;
+  flex: 1;
+  max-width: 9.5rem;
   height: 100%;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-family: "Sora", sans-serif;
   border-radius: 6.1875rem;
   border: none;
@@ -252,11 +259,10 @@
 #hero-section .hero-bg .hero-table-btn {
   position: absolute;
   z-index: 2;
-  top: 31.25rem;
-  left: 48.75rem;
+  top: clamp(18rem, 25vw, 31.25rem);
+  left: clamp(20rem, 40vw, 48.75rem);
 }
 #hero-section .hero-bg .hero-table-btn div {
-  position: relative;
   width: 2.875rem;
   height: 2.875rem;
   display: flex;
@@ -278,11 +284,10 @@
 #hero-section .hero-bg .hero-couch-btn {
   position: absolute;
   z-index: 2;
-  top: 18.75rem;
-  left: 68.75rem;
+  top: clamp(10rem, 16vw, 18.75rem);
+  left: clamp(30rem, 55vw, 71.875rem);
 }
 #hero-section .hero-bg .hero-couch-btn div {
-  position: relative;
   width: 2.875rem;
   height: 2.875rem;
   display: flex;
@@ -292,7 +297,6 @@
   border: 0.35px solid #ffffff;
 }
 #hero-section .hero-bg .hero-couch-btn div span {
-  position: absolute;
   width: 1.5rem;
   height: 1.5rem;
   display: flex;
@@ -306,11 +310,10 @@
 #hero-section .hero-bg .hero-chair-btn {
   position: absolute;
   z-index: 2;
-  top: 500px;
-  right: 400px;
+  top: clamp(20rem, 25vw, 31.25rem);
+  right: clamp(8rem, 20vw, 25rem);
 }
 #hero-section .hero-bg .hero-chair-btn div {
-  position: relative;
   width: 2.875rem;
   height: 2.875rem;
   display: flex;
@@ -320,7 +323,6 @@
   border: 0.35px solid #ffffff;
 }
 #hero-section .hero-bg .hero-chair-btn div span {
-  position: absolute;
   width: 1.5rem;
   height: 1.5rem;
   display: flex;
@@ -332,7 +334,207 @@
   border-radius: 50%;
 }
 
+#products-wrapper {
+  width: 100%;
+  min-height: clamp(40rem, 100vh, 120rem);
+  font-family: "Sora", sans-serif;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+#products-wrapper .products-wrapper {
+  width: clamp(90%, 64vw, 64%);
+  height: clamp(20rem, 50vh, 30.6875rem);
+}
+#products-wrapper .products-wrapper .product-experience {
+  width: 100%;
+  height: clamp(10rem, 25vh, 15rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: clamp(1rem, 4vh, 3rem) auto clamp(1rem, 4vh, 3rem);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+#products-wrapper .products-wrapper .product-experience .product-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+#products-wrapper .products-wrapper .product-experience .product-search :first-child {
+  font-weight: 600;
+  font-size: clamp(0.625rem, 1vw, 0.75rem);
+  font-family: "Sora", sans-serif;
+  padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vh, 1.25rem);
+  color: #0b3954;
+}
+#products-wrapper .products-wrapper .product-experience .product-search :nth-child(2) {
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: "Sora", sans-serif;
+  padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(0.25rem, 1vh, 0.3125rem);
+  color: #ffb128;
+}
+#products-wrapper .products-wrapper .product-experience .product-search :last-child {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: "Sora", sans-serif;
+  padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(1.5rem, 4vh, 2.5rem);
+  color: #0b3954;
+}
+#products-wrapper .products-wrapper .product-experience .product-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19.375rem;
+  height: 6rem;
+}
+#products-wrapper .products-wrapper .product-experience .product-stats .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+#products-wrapper .products-wrapper .product-experience .product-stats .content .icon {
+  width: clamp(1rem, 4vw, 2rem);
+  border: 0.25rem solid #ffb128;
+  border-radius: 6.1875rem;
+  margin-right: clamp(0.5rem, 1vw, 1rem);
+}
+#products-wrapper .products-wrapper .product-experience .product-stats .content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-right: clamp(0.5rem, 1vw, 1rem);
+  font-family: "Poppins", sans-serif;
+}
+#products-wrapper .products-wrapper .product-experience .product-stats .content div :first-child {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-family: "Sora", sans-serif;
+  color: #0b3954;
+}
+#products-wrapper .products-wrapper .product-experience .product-stats .content div :nth-child(2) {
+  font-weight: 400;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-family: "Sora", sans-serif;
+  color: #5c676d;
+}
+#products-wrapper .products-wrapper .furniture-icon-list {
+  width: 100%;
+  height: clamp(12rem, 60vh, 18.625rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: clamp(2rem, 6.25rem, 8vh) auto clamp(1.5rem, 3.75rem, 5vh);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  gap: 1rem;
+}
+#products-wrapper .products-wrapper .furniture-icon-list a {
+  text-decoration: none;
+  color: #0b3954;
+}
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names {
+  width: 11.25rem;
+  height: 14.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names:hover {
+  background-color: white;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names img {
+  width: 6rem;
+  height: 6rem;
+}
+
+#furniture-types-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Sora", sans-serif;
+  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+}
+#furniture-types-wrapper .furniture-types-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin: 0 auto;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types {
+  width: 31.25rem;
+  height: 37.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: left;
+  border-radius: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding-bottom: 2.5rem;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types p {
+  font-weight: 500;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  padding: 0 0 1rem 1.25rem;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types div {
+  padding-left: 1.25rem;
+  transition: transform 0.3s ease;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types div:hover {
+  transform: translateY(-0.5rem);
+  cursor: pointer;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types div h2 {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  padding-bottom: 1rem;
+}
+#furniture-types-wrapper .furniture-types-container .furniture-types div span {
+  width: clamp(1.5rem, 3vw, 3rem);
+  height: 0;
+  display: block;
+  border: 2px solid #ffb128;
+  border-radius: 2px;
+}
+#furniture-types-wrapper .furniture-types-container .bedroom {
+  background-image: url(../../../assets/media/furniture-types-wrapper/furniturestore-home-pic1.webp);
+}
+#furniture-types-wrapper .furniture-types-container .office {
+  background-image: url(../../../assets/media/furniture-types-wrapper/office.png);
+}
+#furniture-types-wrapper .furniture-types-container .kitchen {
+  background-image: url(../../../assets/media/furniture-types-wrapper/kitchen.png);
+}
+@media (max-width: 768px) {
+  #furniture-types-wrapper .furniture-types-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #furniture-types-wrapper .furniture-types {
+    width: 100%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+* a {
+  text-decoration: none;
+  color: inherit;
 }/*# sourceMappingURL=main.css.map */

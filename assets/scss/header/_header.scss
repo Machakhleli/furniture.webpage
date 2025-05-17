@@ -1,53 +1,60 @@
 #header {
-  @include boxSize(100%, 10.125rem);
+  @include boxSize(100%, clamp(6rem, 15vh, 10.1875rem));
   font-family: "Sora", sans-serif;
   .header-top-wrapper {
-    @include sectionBox(76.25rem, 26%);
-    margin: 1.875rem auto 0.625rem;
+    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 26%);
+    margin: clamp(0.5rem, 3vh, 1.875rem) auto clamp(0.25rem, 1vh, 0.625rem);
     .logo {
-      @include boxSize(18.75rem, 100%);
+      @include boxSize(clamp(8rem, 40vw, 18.75rem), 100%);
       @include flex(left, center);
-      padding: 0 0.3125rem;
-      gap: 1rem;
+      padding: 0 clamp(0.25rem, 1vw, 0.3125rem);
+      gap: clamp(0.5rem, 2vw, 1rem);
       a {
         text-decoration: none;
       }
       img {
-        @include boxSize(3.375rem, 100%);
+        @include boxSize(clamp(2rem, 5vw, 3.375rem), 100%);
       }
       span {
-        @include primaryFont(bold, 1.5rem);
+        @include primaryFont(bold, clamp(1rem, 3vw, 1.5rem));
         color: color($mainColor, 0%);
       }
     }
     .search-bar {
-      @include boxSize(47.125rem, 100%);
+      @include boxSize(clamp(15rem, 60vw, 47.125rem), 100%);
       @include flex(center, center);
       position: relative;
       img {
         position: absolute;
-        left: 5.9375rem;
+        left: clamp(2rem, 10vw, 5.9375rem);
         &:hover {
           cursor: pointer;
         }
       }
       input[type="search"] {
-        @include inputStyles(36.125rem, 500, 1rem);
+        @include inputStyles(
+          clamp(12rem, 50vw, 36.125rem),
+          500,
+          clamp(0.875rem, 2vw, 1rem)
+        );
       }
     }
     .user-side-container {
-      @include boxSize(11.125rem, 100%);
+      @include boxSize(clamp(6rem, 25vw, 11.125rem), 100%);
       @include flex(space-between, center);
       .user-side-icon {
         position: relative;
         cursor: pointer;
-        gap: 0.3125rem;
+        gap: clamp(0.25rem, 1vw, 0.3125rem);
         span {
           position: absolute;
           top: -0.5rem;
           left: 0.85rem;
-          @include boxSize(1.0625rem, 1.0625rem);
-          @include primaryFont(400, 0.7rem);
+          @include boxSize(
+            clamp(0.75rem, 1.5vw, 1.0625rem),
+            clamp(0.75rem, 1.5vw, 1.0625rem)
+          );
+          @include primaryFont(400, clamp(0.625rem, 1.5vw, 0.7rem));
           background-color: $alternativeColor;
           border-radius: 50%;
           text-align: center;
@@ -58,16 +65,19 @@
         cursor: pointer;
         span {
           color: $mainColor;
-          @include primaryFont(700, 1rem);
+          @include primaryFont(700, clamp(0.875rem, 2vw, 1rem));
         }
       }
     }
   }
   .header-bottom-wrapper {
-    @include sectionBox(76.25rem, 48%);
+    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 74%);
     margin: 0 auto;
     .furniture-types {
-      @include boxSize(10.9375rem, 3.75rem);
+      @include boxSize(
+        clamp(6rem, 20vw, 10.9375rem),
+        clamp(2rem, 8vh, 3.75rem)
+      );
       @include verticalFlex(center, center);
       gap: 0.5rem;
       border-right: 0.0625rem solid #f5f5f5;
@@ -78,23 +88,30 @@
         }
       }
       img {
-        @include boxSize(2rem, 2rem);
+        @include boxSize(clamp(1.5rem, 4vw, 2rem), clamp(1.5rem, 4vw, 2rem));
       }
       .furniture-names {
-        @include boxSize(3.75rem, 0.875rem);
+        @include boxSize(
+          clamp(2.5rem, 8vw, 3.75rem),
+          clamp(0.75rem, 1.5vw, 0.875rem)
+        );
         @include flex(space-between, center);
-        gap: 0.625rem;
+        gap: clamp(0.25rem, 1vw, 0.625rem);
+        padding-bottom: 2rem;
         span {
-          @include primaryFont(600, 1rem);
+          @include primaryFont(600, clamp(0.875rem, 2vw, 1rem));
           color: color($mainColor, 0%);
         }
         img {
-          @include boxSize(0.75rem, 0.75rem);
+          @include boxSize(
+            clamp(0.5rem, 1.5vw, 0.75rem),
+            clamp(0.5rem, 1.5vw, 0.75rem)
+          );
         }
       }
     }
     .sales {
-      @include boxSize(10.625rem, 100%);
+      @include boxSize(10.625rem, 85%);
       @include verticalFlex;
       background-color: $secondaryColor;
       border-top-left-radius: 0.5rem;

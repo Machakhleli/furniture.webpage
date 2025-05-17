@@ -1,39 +1,62 @@
 #hero-section {
-  @include boxSize(100%, calc(100vh - (100vh - 46.25rem)));
+  @include boxSize(100%, 100vh);
   @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
   .hero-bg {
     position: relative;
-    @include boxSize(90%, calc(100vh - (100vh - 41.875rem)));
+    @include boxSize(90%, clamp(25rem, 55vh, 48rem));
     @include flex(center, center);
     background-color: color($mainColor, 0%);
     border-radius: 2rem;
     .hero-content-container {
       position: absolute;
       z-index: 1;
-      top: 2.375rem;
-      @include boxSize(68%, calc(100vh - (100vh - 41.875rem)));
+      top: clamp(1.5rem, 4vh, 2.375rem);
+      @include boxSize(68%, clamp(25rem, 55vh, 41.875rem));
       background: url(../../../assets/media/hero-section/main.photo.png);
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 2rem;
       .hero-text {
-        margin: 3.25rem 41.375rem 16.5rem 3.125rem;
-        @include mainFontStyle(600, 0.75rem, 1.5625rem, 0%);
+        margin: clamp(1rem, 4vw, 3.25rem) clamp(1rem, 20vw, 41.375rem)
+          clamp(2rem, 10vh, 16.5rem) clamp(1rem, 5vw, 3.125rem);
+        @include mainFontStyle(
+          600,
+          clamp(0.625rem, 2vw, 0.75rem),
+          clamp(1.2rem, 2.5vw, 1.5625rem),
+          0%
+        );
         color: color($thirdColor, 0%);
         > span {
           padding: 0.3125rem;
+          display: block;
+          font-size: clamp(0.625rem, 1.5vw, 0.875rem);
         }
         > h1 {
-          @include mainFontStyle(700, 4rem, 4.5rem, 0%);
+          @include mainFontStyle(
+            700,
+            clamp(2.5rem, 6vw, 4rem),
+            clamp(3rem, 6.5vw, 4.5rem),
+            0%
+          );
+          margin: clamp(0.5rem, 2vh, 1rem) 0;
         }
         > .main-buttons-wrapper {
-          @include boxSize(22.75rem, 2.6875rem);
+          width: 100%;
+          max-width: 22.75rem;
+          height: clamp(2rem, 6vh, 2.6875rem);
           @include flex(left, center);
-          gap: 1.75rem;
+          gap: clamp(1rem, 3vw, 1.75rem);
           > button {
-            @include boxSize(9.5rem, 100%);
-            @include mainFontStyle(700, 0.875rem, 1.3125rem, 0%);
+            flex: 1;
+            max-width: 9.5rem;
+            height: 100%;
+            @include mainFontStyle(
+              700,
+              clamp(0.75rem, 2vw, 0.875rem),
+              clamp(1rem, 2.5vw, 1.3125rem),
+              0%
+            );
             border-radius: 6.1875rem;
             border: none;
             color: color($thirdColor, 0%);
@@ -71,10 +94,9 @@
     .hero-table-btn {
       position: absolute;
       z-index: 2;
-      top: 31.25rem;
-      left: 48.75rem;
+      top: clamp(18rem, 25vw, 31.25rem);
+      left: clamp(20rem, 40vw, 48.75rem);
       div {
-        position: relative;
         @include boxSize(2.875rem, 2.875rem);
         @include flex(center, center);
         border-radius: 50%;
@@ -91,16 +113,15 @@
     .hero-couch-btn {
       position: absolute;
       z-index: 2;
-      top: 18.75rem;
-      left: 68.75rem;
+      top: clamp(10rem, 16vw, 18.75rem);
+      left: clamp(30rem, 55vw, 71.875rem);
       div {
-        position: relative;
         @include boxSize(2.875rem, 2.875rem);
         @include flex(center, center);
         border-radius: 50%;
         border: 0.35px solid$thirdColor;
+
         span {
-          position: absolute;
           @include boxSize(1.5rem, 1.5rem);
           @include flex(center, center);
           z-index: 10;
@@ -113,16 +134,14 @@
     .hero-chair-btn {
       position: absolute;
       z-index: 2;
-      top: 500px;
-      right: 400px;
+      top: clamp(20rem, 25vw, 31.25rem);
+      right: clamp(8rem, 20vw, 25rem);
       div {
-        position: relative;
         @include boxSize(2.875rem, 2.875rem);
         @include flex(center, center);
         border-radius: 50%;
         border: 0.35px solid$thirdColor;
         span {
-          position: absolute;
           @include boxSize(1.5rem, 1.5rem);
           @include flex(center, center);
           z-index: 10;

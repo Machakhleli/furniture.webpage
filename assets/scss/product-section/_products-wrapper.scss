@@ -1,0 +1,113 @@
+#products-wrapper {
+  width: 100%;
+  min-height: clamp(40rem, 100vh, 120rem);
+  font-family: "Sora", sans-serif;
+  background-color: color(#f9f9f9, 0%);
+  overflow: hidden;
+  .products-wrapper {
+    @include boxSize(clamp(90%, 64vw, 64%), clamp(20rem, 50vh, 30.6875rem));
+    .product-experience {
+      @include boxSize(100%, clamp(10rem, 25vh, 15rem));
+      @include flex(space-between, center);
+      margin: clamp(1rem, 4vh, 3rem) auto clamp(1rem, 4vh, 3rem);
+      padding: 0 clamp(1rem, 5vw, 3rem);
+      .product-search {
+        @include verticalFlex(center, left);
+        :first-child {
+          @include mainFontStyle(
+            600,
+            clamp(0.625rem, 1vw, 0.75rem),
+            clamp(1rem, 1.8vw, 1.125rem),
+            0%
+          );
+          padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vh, 1.25rem);
+          color: color($mainColor, 0);
+        }
+        :nth-child(2) {
+          @include mainFontStyle(
+            600,
+            clamp(2rem, 5vw, 3rem),
+            clamp(2.5rem, 6vw, 3.4375rem),
+            0%
+          );
+          padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(0.25rem, 1vh, 0.3125rem);
+          color: color($secondaryColor, 0%);
+        }
+        :last-child {
+          @include mainFontStyle(
+            700,
+            clamp(2rem, 5vw, 3rem),
+            clamp(2.5rem, 6vw, 3.4375rem),
+            0%
+          );
+          padding: 0 clamp(0.5rem, 1vw, 0.75rem) clamp(1.5rem, 4vh, 2.5rem);
+          color: color($mainColor, 0);
+        }
+      }
+      .product-stats {
+        @include flex(center, center);
+        @include boxSize(19.375rem, 6rem);
+        .content {
+          @include flex(space-between, center);
+          gap: 1rem;
+          .icon {
+            width: clamp(1rem, 4vw, 2rem);
+            border: 0.25rem solid $secondaryColor;
+            border-radius: 6.1875rem;
+            margin-right: clamp(0.5rem, 1vw, 1rem);
+          }
+          div {
+            @include verticalFlex(center, left);
+            padding-right: clamp(0.5rem, 1vw, 1rem);
+            font-family: "Poppins", sans-serif;
+            :first-child {
+              @include mainFontStyle(
+                700,
+                clamp(1.5rem, 4vw, 3rem),
+                clamp(2rem, 5vw, 2.5rem),
+                0%
+              );
+              color: color($mainColor, 0%);
+            }
+            :nth-child(2) {
+              @include mainFontStyle(
+                400,
+                clamp(1rem, 4vw, 1.5rem),
+                clamp(1.5rem, 3vw, 2rem),
+                0%
+              );
+              color: color($fourthColor, 0%);
+            }
+          }
+        }
+      }
+    }
+    .furniture-icon-list {
+      @include boxSize(100%, clamp(12rem, 60vh, 18.625rem));
+      @include flex(space-between, center);
+      margin: clamp(2rem, 6.25rem, 8vh) auto clamp(1.5rem, 3.75rem, 5vh);
+      padding: 0 clamp(1rem, 5vw, 3rem);
+      gap: 1rem;
+      a {
+        text-decoration: none;
+        color: color($mainColor, 0%);
+        .furniture-names {
+          @include boxSize(11.25rem, 14.875rem);
+          @include verticalFlex(center, center);
+          background-color: color($sectionBgColor, 2%);
+          border-radius: 2rem;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          &:hover {
+            background-color: color($thirdColor, 0%);
+            box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+            border-radius: 2rem;
+            cursor: pointer;
+          }
+          img {
+            @include boxSize(6rem, 6rem);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+#furniture-types-wrapper {
+  @include boxSize(100%, 100vh);
+  background-color: color(#f9f9f9, 0%);
+  font-family: "Sora", sans-serif;
+  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+  .furniture-types-container {
+    @include boxSize(100%, 100%);
+    @include flex(space-between, center);
+    gap: clamp(1rem, 2vw, 2rem);
+    margin: 0 auto;
+    .furniture-types {
+      @include boxSize(31.25rem, 37.5rem);
+      @include verticalFlex(flex-end, left);
+      border-radius: 2rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: color($thirdColor, 0%);
+      padding-bottom: 2.5rem;
+      p {
+        @include primaryFont(500, clamp(0.875rem, 1.5vw, 1rem));
+        padding: 0 0 1rem 1.25rem;
+      }
+      div {
+        padding-left: 1.25rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-0.5rem);
+          cursor: pointer;
+        }
+        h2 {
+          @include primaryFont(700, clamp(1.5rem, 4vw, 2.5rem));
+          padding-bottom: 1rem;
+        }
+        span {
+          @include boxSize(clamp(1.5rem, 3vw, 3rem), 0);
+          display: block;
+          border: 2px solid $secondaryColor;
+          border-radius: 2px;
+        }
+      }
+    }
+    .bedroom {
+      background-image: url(../../../assets/media/furniture-types-wrapper/furniturestore-home-pic1.webp);
+    }
+    .office {
+      background-image: url(../../../assets/media/furniture-types-wrapper/office.png);
+    }
+    .kitchen {
+      background-image: url(../../../assets/media/furniture-types-wrapper/kitchen.png);
+    }
+  }
+  @media (max-width: 768px) {
+    .furniture-types-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .furniture-types {
+      width: 100%;
+    }
+  }
+}

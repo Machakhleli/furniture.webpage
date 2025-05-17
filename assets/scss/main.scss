@@ -4,8 +4,15 @@
 @import "./functions";
 @import "./header/header";
 @import "./main\(hero-section\)/hero-section";
+@import "./product-section/products-wrapper";
+@import "./furniture-types/furniture-types-wrapper";
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
