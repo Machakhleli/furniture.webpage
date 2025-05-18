@@ -1,0 +1,58 @@
+#actual-trends-wrapper {
+  @include boxSize(100%, 100vh);
+  .actual-trend-container {
+    @include boxSize(85%, 38.125rem);
+    @include flex(space-between, center);
+    margin: 6.25rem auto;
+    .trend-main-photo {
+      @include boxSize(55%, 100%);
+      @include setBackground(
+        url(../../../assets/media/actual-trends/furniturestore-home-pic4.png),
+        no-repeat,
+        cover,
+        center
+      );
+    }
+    .trend-text-wrapper {
+      @include boxSize(45%, 100%);
+      @include verticalFlex(center, left);
+      padding-left: 3rem;
+      .trend-text-container {
+        @include boxSize(85%, 50%);
+        span,
+        h2 {
+          color: $mainColor;
+        }
+        span {
+          @include mainFontStyle(400, 1rem, 1.5rem, 0);
+          padding: 0 0.75rem 1.25rem 0.75rem;
+        }
+        h2 {
+          @include mainFontStyle(700, 3rem, 3.4375rem, 0);
+          padding: 0 0.75rem 1.875rem 0.75rem;
+        }
+        p {
+          @include mainFontStyle(400, 1rem, 1.5rem, 0);
+          font-family: "Poppins", sans-serif;
+          color: $fourthColor;
+          padding: 0 0.75rem 1.875rem 0.75rem;
+        }
+        button {
+          @include boxSize(13rem, 2.75rem);
+          @include mainFontStyle(600, 0.875rem, 0.875rem, 0);
+          text-align: center;
+          background-color: $secondaryColor;
+          color: $thirdColor;
+          border-radius: 5rem;
+          transition: 0.3s ease;
+          outline: none;
+          border: none;
+          &:hover {
+            background-color: $mainColor;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

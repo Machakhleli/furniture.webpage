@@ -20,9 +20,9 @@
   font-weight: $weight;
   font-size: $size;
 }
-@mixin mainFontStyle($weight, $size, $height, $spacing){
+@mixin mainFontStyle($weight, $size, $height, $spacing) {
   @include primaryFont($weight, $size);
-  font-family:"Sora", sans-serif ;
+  font-family: "Sora", sans-serif;
 }
 
 @mixin sectionBox($width, $height, $justify: space-between, $align: center) {
@@ -38,4 +38,10 @@
   border: none;
   border-radius: 0.5rem;
   padding: 0.625rem 0.625rem 0.625rem 2.5rem;
+}
+@mixin setBackground($backgroundImg, $bgRepeat, $bgSize, $bgPosition) {
+  background-image: $backgroundImg;
+  background-repeat: $bgRepeat;
+  background-size: $bgSize;
+  background-position: $bgPosition;
 }
