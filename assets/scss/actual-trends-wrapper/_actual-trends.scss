@@ -3,7 +3,7 @@
   .actual-trend-container {
     @include boxSize(85%, 38.125rem);
     @include flex(space-between, center);
-    margin: 6.25rem auto;
+    margin: clamp(3rem, 8vw, 6.25rem) auto;
     .trend-main-photo {
       @include boxSize(55%, 100%);
       @include setBackground(
@@ -16,7 +16,7 @@
     .trend-text-wrapper {
       @include boxSize(45%, 100%);
       @include verticalFlex(center, left);
-      padding-left: 3rem;
+      padding-left: clamp(1rem, 5vw, 3rem);
       .trend-text-container {
         @include boxSize(85%, 50%);
         span,
@@ -24,22 +24,46 @@
           color: $mainColor;
         }
         span {
-          @include mainFontStyle(400, 1rem, 1.5rem, 0);
-          padding: 0 0.75rem 1.25rem 0.75rem;
+          @include mainFontStyle(
+            400,
+            clamp(0.875rem, 1vw + 0.5rem, 1rem),
+            clamp(1.25rem, 1.5vw, 1.5rem),
+            0
+          );
+          padding: 0 clamp(0.5rem, 1.5vw, 0.75rem)
+            clamp(0.75rem, 1.5vw, 1.25rem);
         }
         h2 {
-          @include mainFontStyle(700, 3rem, 3.4375rem, 0);
-          padding: 0 0.75rem 1.875rem 0.75rem;
+          @include mainFontStyle(
+            700,
+            clamp(2rem, 4vw, 3rem),
+            clamp(2.5rem, 5vw, 3.4375rem),
+            0
+          );
+          padding: 0 clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.875rem);
         }
         p {
-          @include mainFontStyle(400, 1rem, 1.5rem, 0);
+          @include mainFontStyle(
+            400,
+            clamp(0.875rem, 1vw, 1rem),
+            clamp(1.25rem, 2vw, 1.5rem),
+            0
+          );
           font-family: "Poppins", sans-serif;
           color: $fourthColor;
-          padding: 0 0.75rem 1.875rem 0.75rem;
+          padding: 0 clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.875rem);
         }
         button {
-          @include boxSize(13rem, 2.75rem);
-          @include mainFontStyle(600, 0.875rem, 0.875rem, 0);
+          @include boxSize(
+            clamp(10rem, 20vw, 13rem),
+            clamp(2.25rem, 6vw, 2.75rem)
+          );
+          @include mainFontStyle(
+            600,
+            clamp(0.75rem, 1vw, 0.875rem),
+            clamp(0.75rem, 1vw, 0.875rem),
+            0
+          );
           text-align: center;
           background-color: $secondaryColor;
           color: $thirdColor;

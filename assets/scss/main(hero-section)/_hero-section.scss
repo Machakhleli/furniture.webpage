@@ -52,9 +52,9 @@
             max-width: 9.5rem;
             height: 100%;
             @include mainFontStyle(
-              700,
-              clamp(0.75rem, 2vw, 0.875rem),
-              clamp(1rem, 2.5vw, 1.3125rem),
+              600,
+              clamp(0.75rem, 1.5vw, 0.675rem),
+              clamp(1rem, 2.5vw, 1.1125rem),
               0%
             );
             border-radius: 6.1875rem;
