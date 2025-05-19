@@ -592,7 +592,6 @@
   font-weight: 600;
   font-size: clamp(0.75rem, 1vw, 0.875rem);
   font-family: "Sora", sans-serif;
-  text-align: center;
   background-color: #ffb128;
   color: #ffffff;
   border-radius: 5rem;
