@@ -149,7 +149,7 @@
 }
 #header .header-bottom-wrapper .sales {
   width: 10.625rem;
-  height: 78%;
+  height: 83%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -344,6 +344,133 @@
   border-radius: 50%;
 }
 
+@media (max-width: 1440px) {
+  #hero-section {
+    padding-top: 1.5rem;
+  }
+  #hero-section .hero-bg {
+    width: 95%;
+    height: clamp(25rem, 80vh, 38rem);
+  }
+  #hero-section .hero-bg .hero-content-container {
+    width: 95%;
+    height: 100%;
+    top: clamp(1rem, 3vh, 2rem);
+    border-radius: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text {
+    margin: clamp(1rem, 3vw, 2rem) clamp(1rem, 15vw, 30rem) clamp(1.5rem, 8vh, 12rem) clamp(1rem, 3vw, 2rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text > span {
+    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text > h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: clamp(2.5rem, 5.5vw, 4rem);
+    margin: clamp(0.5rem, 1.5vh, 1rem) 0;
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper {
+    max-width: 20rem;
+    height: clamp(2rem, 5vh, 2.5rem);
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper > button {
+    max-width: 8rem;
+    font-size: clamp(0.625rem, 1.3vw, 0.875rem);
+  }
+  #hero-section .hero-bg .furniture-color-btn {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+  #hero-section .hero-bg .hero-table-btn div,
+  #hero-section .hero-bg .hero-couch-btn div,
+  #hero-section .hero-bg .hero-chair-btn div {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  #hero-section .hero-bg .hero-table-btn div span,
+  #hero-section .hero-bg .hero-couch-btn div span,
+  #hero-section .hero-bg .hero-chair-btn div span {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  #hero-section .hero-bg .hero-table-btn {
+    top: 25.625rem;
+    left: 35rem;
+  }
+  #hero-section .hero-bg .hero-couch-btn {
+    top: clamp(9rem, 16vw, 15rem);
+    left: 900px;
+  }
+  #hero-section .hero-bg .hero-chair-btn {
+    top: clamp(18rem, 28vw, 26rem);
+    right: clamp(6rem, 12vw, 18rem);
+  }
+}
+@media (max-width: 1024px) {
+  #hero-section {
+    padding-top: 1rem;
+  }
+  #hero-section .hero-bg {
+    width: 95%;
+    height: clamp(22rem, 75vh, 34rem);
+    border-radius: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  #hero-section .hero-bg .hero-content-container {
+    width: 95%;
+    height: 100%;
+    top: clamp(1rem, 2vh, 1.75rem);
+    border-radius: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text {
+    margin: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 8vw, 10rem) clamp(1.5rem, 6vh, 10rem) clamp(1rem, 2vw, 1.5rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text > span {
+    font-size: clamp(0.5rem, 1vw, 0.75rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text > h1 {
+    font-size: clamp(1.75rem, 4.5vw, 3rem);
+    line-height: clamp(2.25rem, 5vw, 3.5rem);
+    margin: clamp(0.5rem, 1vh, 0.75rem) 0;
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper {
+    max-width: 18rem;
+    height: clamp(1.75rem, 5vh, 2.25rem);
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+  }
+  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper > button {
+    max-width: 7.5rem;
+    font-size: clamp(0.5rem, 1.1vw, 0.75rem);
+  }
+  #hero-section .hero-bg .furniture-color-btn {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  #hero-section .hero-bg .hero-table-btn div,
+  #hero-section .hero-bg .hero-couch-btn div,
+  #hero-section .hero-bg .hero-chair-btn div {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  #hero-section .hero-bg .hero-table-btn div span,
+  #hero-section .hero-bg .hero-couch-btn div span,
+  #hero-section .hero-bg .hero-chair-btn div span {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  #hero-section .hero-bg .hero-table-btn {
+    top: clamp(14rem, 35vw, 20rem);
+    left: clamp(12rem, 41vw, 28rem);
+  }
+  #hero-section .hero-bg .hero-couch-btn {
+    top: clamp(8rem, 17vw, 12rem);
+    left: clamp(20rem, 89vw, 40rem);
+  }
+  #hero-section .hero-bg .hero-chair-btn {
+    top: clamp(16rem, 30vw, 20rem);
+    right: clamp(5rem, 12vw, 12rem);
+  }
+}
 #products-wrapper {
   width: 100%;
   height: clamp(30rem, 42vw, 40.6875rem);
