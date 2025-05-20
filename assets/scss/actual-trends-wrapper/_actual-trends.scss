@@ -1,7 +1,12 @@
 #actual-trends-wrapper {
-  @include boxSize(100%, 100vh);
+  // @include boxSize(100%, auto);
+  width: 100%;
+  min-height: 100vh;
+  background-color: $sectionBgColor;
+  // padding: 3rem 0;
+  // overflow: hidden;
   .actual-trend-container {
-    @include boxSize(85%, 38.125rem);
+    @include boxSize(85%, 100vh);
     @include flex(space-between, center);
     margin: clamp(3rem, 8vw, 6.25rem) auto;
     .trend-main-photo {
@@ -70,7 +75,7 @@
           transition: 0.3s ease;
           outline: none;
           border: none;
-          
+
           &:hover {
             background-color: $mainColor;
             cursor: pointer;

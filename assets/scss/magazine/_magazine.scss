@@ -1,0 +1,80 @@
+#magazine {
+  @include boxSize(100%, 100vh);
+  min-height: 100vh;
+  background-color: $sectionBgColor;
+  .magazine-content-container {
+    // position: relative;
+    @include boxSize(1220px, 552px);
+    @include verticalFlex;
+    margin: 0 auto;
+    background-color: $secondaryColor;
+    border-radius: 32px;
+    .magazine-top-content {
+      @include boxSize(1110px, 456px);
+      @include flex(left, center);
+      .magazine-img {
+        @include boxSize(50%, 456px);
+      }
+      .magazine-text {
+        @include boxSize(50%, 280px);
+        @include verticalFlex(left, left);
+        gap: 15px;
+        span {
+          @include mainFontStyle(600, 12px, 18px, 0);
+          color: $thirdColor;
+        }
+        h2 {
+          @include mainFontStyle(700, 48px, 55px, 0);
+          color: $thirdColor;
+          padding-bottom: 16px;
+          padding-right: 144px;
+        }
+        button {
+          @include boxSize(162px, 44px);
+          padding: 15px 35px;
+          background-color: $mainColor;
+          color: $thirdColor;
+          border-radius: 32px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+    .magazine-bottom-content {
+      @include boxSize(68.625rem, 8.4375rem);
+      @include flex(space-between, center);
+      margin: 0 auto;
+      .magazine-pages {
+        @include boxSize(22.875rem, 8.4375rem);
+        // @include verticalFlex(center, center);
+        text-align: center;
+        padding: 0 0.75rem, 2.5rem 0.75rem;
+
+        transition: ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+        div {
+          @include flex(space-between, center);
+          gap: 1.75rem;
+          color: $thirdColor;
+          margin-bottom: 1rem;
+          span {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            padding: 0.3125rem, 1.25rem 0 0.3125rem;
+          }
+          p {
+            @include mainFontStyle(800, 1.5rem, 1.75rem, 0);
+          }
+        }
+        .pages {
+          @include mainFontStyle(400, 1rem, 1.5rem, 0);
+          color: color($thirdColor, 0);
+          opacity: 50%;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

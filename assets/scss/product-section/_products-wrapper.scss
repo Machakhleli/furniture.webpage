@@ -3,7 +3,8 @@
   min-height: clamp(40rem, 100vh, 120rem);
   font-family: "Sora", sans-serif;
   background-color: color(#f9f9f9, 0%);
-  overflow: hidden;
+  // overflow: hidden;
+  padding-top: 1rem;
   .products-wrapper {
     @include boxSize(clamp(90%, 64vw, 64%), clamp(20rem, 50vh, 30.6875rem));
     .product-experience {

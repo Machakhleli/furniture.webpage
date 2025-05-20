@@ -1,0 +1,82 @@
+#furniture-selector {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $sectionBgColor;
+  margin-top: 3rem;
+  padding-top: 7rem;
+  // padding-bottom: 3rem;
+  @include verticalFlex;
+  .furniture-selector-container {
+    @include boxSize(76.25rem, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    .furniture-card {
+      @include boxSize(23.375rem, 30.625rem);
+      @include verticalFlex(center, center);
+      gap: 4.625rem;
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      background-color: color($thirdColor, 5%);
+      border-radius: 1rem;
+      span {
+        @include mainFontStyle(400, 1rem, 1rem, 0);
+        color: $mainColor;
+        text-align: center;
+      }
+      .furniture-card-items {
+        @include flex(center, center); // ეს გადასამოწმებელი იქნება
+        position: relative;
+        &:hover .card-item-icons {
+          cursor: pointer;
+          display: block;
+        }
+        span {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+        }
+        img {
+          @include boxSize(20rem, 20rem);
+        }
+        .card-item-icons {
+          @include verticalFlex(center, space-between);
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          display: none;
+          .icons {
+            @include boxSize(2rem, 2rem);
+            @include flex(center, center);
+            gap: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            img {
+              @include boxSize(1.25rem, 1.25rem);
+              transition: ease;
+              &:hover {
+                filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
+                  brightness(106%) contrast(106%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .go-to-shop-btn {
+    @include boxSize(10.3125rem, 2.875rem);
+    @include mainFontStyle(600, 0.875rem, 0.875rem, o);
+    margin: 2rem auto;
+    padding: 1rem 2.25rem;
+    border-radius: 2rem;
+    border: none;
+    text-align: center;
+    color: $secondaryColor;
+    &:hover {
+      background-color: $secondaryColor;
+      color: $thirdColor;
+      cursor: pointer;
+    }
+  }
+}

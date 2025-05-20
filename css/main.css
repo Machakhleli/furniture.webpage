@@ -339,7 +339,7 @@
   min-height: clamp(40rem, 100vh, 120rem);
   font-family: "Sora", sans-serif;
   background-color: #f9f9f9;
-  overflow: hidden;
+  padding-top: 1rem;
 }
 #products-wrapper .products-wrapper {
   width: clamp(90%, 64vw, 64%);
@@ -460,8 +460,6 @@
   width: 100%;
   height: 100vh;
   background-color: #f9f9f9;
-  font-family: "Sora", sans-serif;
-  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
 }
 #furniture-types-wrapper .furniture-types-container {
   width: 100%;
@@ -531,11 +529,12 @@
 
 #actual-trends-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f9f9f9;
 }
 #actual-trends-wrapper .actual-trend-container {
   width: 85%;
-  height: 38.125rem;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -602,6 +601,216 @@
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper .trend-text-container button:hover {
   background-color: #0b3954;
   cursor: pointer;
+}
+
+#furniture-selector {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  margin-top: 3rem;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#furniture-selector .furniture-selector-container {
+  width: 76.25rem;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+#furniture-selector .furniture-selector-container .furniture-card {
+  width: 23.375rem;
+  height: 30.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.625rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  background-color: #f2f2f2;
+  border-radius: 1rem;
+}
+#furniture-selector .furniture-selector-container .furniture-card span {
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Sora", sans-serif;
+  color: #0b3954;
+  text-align: center;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items:hover .card-item-icons {
+  cursor: pointer;
+  display: block;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items span {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items img {
+  width: 20rem;
+  height: 20rem;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: none;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons img {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: ease;
+}
+#furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons img:hover {
+  filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg) brightness(106%) contrast(106%);
+}
+#furniture-selector .go-to-shop-btn {
+  width: 10.3125rem;
+  height: 2.875rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: "Sora", sans-serif;
+  margin: 2rem auto;
+  padding: 1rem 2.25rem;
+  border-radius: 2rem;
+  border: none;
+  text-align: center;
+  color: #ffb128;
+}
+#furniture-selector .go-to-shop-btn:hover {
+  background-color: #ffb128;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#magazine {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+#magazine .magazine-content-container {
+  width: 1220px;
+  height: 552px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #ffb128;
+  border-radius: 32px;
+}
+#magazine .magazine-content-container .magazine-top-content {
+  width: 1110px;
+  height: 456px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-img {
+  width: 50%;
+  height: 456px;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-text {
+  width: 50%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  gap: 15px;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-text span {
+  font-weight: 600;
+  font-size: 12px;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-text h2 {
+  font-weight: 700;
+  font-size: 48px;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+  padding-bottom: 16px;
+  padding-right: 144px;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-text button {
+  width: 162px;
+  height: 44px;
+  padding: 15px 35px;
+  background-color: #0b3954;
+  color: #ffffff;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+}
+#magazine .magazine-content-container .magazine-bottom-content {
+  width: 68.625rem;
+  height: 8.4375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages {
+  width: 22.875rem;
+  height: 8.4375rem;
+  text-align: center;
+  padding: 0 0.75rem, 2.5rem 0.75rem;
+  transition: ease;
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages:hover {
+  transform: scale(1.05);
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.75rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages div span {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.3125rem, 1.25rem 0 0.3125rem;
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages div p {
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-family: "Sora", sans-serif;
+}
+#magazine .magazine-content-container .magazine-bottom-content .magazine-pages .pages {
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Sora", sans-serif;
+  color: white;
+  opacity: 50%;
+  margin-top: 1rem;
 }
 
 * {
