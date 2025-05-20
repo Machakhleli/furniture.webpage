@@ -1,22 +1,27 @@
 #hero-section {
-  @include boxSize(100%, 100vh);
+  @include boxSize(100%, clamp(35rem, 90vh, 46.25rem));
   @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
+  // overflow: hidden;
+  padding-top: 2rem;
   .hero-bg {
     position: relative;
-    @include boxSize(90%, clamp(25rem, 55vh, 48rem));
+    @include boxSize(clamp(18.75rem, 95vw, 90%), clamp(25rem, 85vh, 41.875rem));
     @include flex(center, center);
     background-color: color($mainColor, 0%);
-    border-radius: 2rem;
+    border-radius: clamp(1rem, 3vw, 2rem);
     .hero-content-container {
       position: absolute;
       z-index: 1;
       top: clamp(1.5rem, 4vh, 2.375rem);
-      @include boxSize(68%, clamp(25rem, 55vh, 41.875rem));
-      background: url(../../../assets/media/hero-section/main.photo.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 2rem;
+      @include boxSize(clamp(18.75rem, 95vw, 73.625rem), 100%);
+      @include setBackground(
+        url(../../../assets/media/hero-section/main.photo.png),
+        no-repeat,
+        cover,
+        center
+      );
+      border-radius: clamp(1rem, 3vw, 2rem);
       .hero-text {
         margin: clamp(1rem, 4vw, 3.25rem) clamp(1rem, 20vw, 41.375rem)
           clamp(2rem, 10vh, 16.5rem) clamp(1rem, 5vw, 3.125rem);
@@ -100,7 +105,7 @@
         @include boxSize(2.875rem, 2.875rem);
         @include flex(center, center);
         border-radius: 50%;
-        border: 0.35px solid$thirdColor;
+        border: 0.35px solid $thirdColor;
         span {
           @include boxSize(1.5rem, 1.5rem);
           @include flex(center, center);

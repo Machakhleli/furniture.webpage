@@ -1,9 +1,14 @@
 #header {
-  @include boxSize(100%, clamp(6rem, 15vh, 10.1875rem));
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  @include boxSize(100%, clamp(6rem, 25vh, 10.1875rem));
   font-family: "Sora", sans-serif;
+  background-color: $thirdColor;
   .header-top-wrapper {
-    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 26%);
-    margin: clamp(0.5rem, 3vh, 1.875rem) auto clamp(0.25rem, 1vh, 0.625rem);
+    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 50%);
+    margin: clamp(0.5rem, 3vh, 1.875rem) auto clamp(0.25rem, 1vh, 1.5rem) auto;
     .logo {
       @include boxSize(clamp(8rem, 40vw, 18.75rem), 100%);
       @include flex(left, center);
@@ -21,7 +26,7 @@
       }
     }
     .search-bar {
-      @include boxSize(clamp(15rem, 60vw, 47.125rem), 100%);
+      @include boxSize(clamp(15rem, 60vw, 47.125rem), 2.8125rem);
       @include flex(center, center);
       position: relative;
       img {
@@ -45,7 +50,7 @@
       .user-side-icon {
         position: relative;
         cursor: pointer;
-        gap: clamp(0.25rem, 1vw, 0.3125rem);
+        gap: clamp(0.25rem, 2vw, 1rem);
         span {
           position: absolute;
           top: -0.5rem;
@@ -71,21 +76,14 @@
     }
   }
   .header-bottom-wrapper {
-    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 74%);
+    @include sectionBox(clamp(18rem, 90vw, 76.25rem), 50%);
     margin: 0 auto;
     .furniture-types {
-      @include boxSize(
-        clamp(6rem, 20vw, 10.9375rem),
-        clamp(2rem, 8vh, 3.75rem)
-      );
+      @include boxSize(clamp(6rem, 20vw, 10.9375rem), 100%);
       @include verticalFlex(center, center);
-      gap: 0.5rem;
-      border-right: 0.0625rem solid #f5f5f5;
+      gap: 1rem;
       &:hover {
         cursor: pointer;
-        .furniture-names > span {
-          color: $secondaryColor;
-        }
       }
       img {
         @include boxSize(clamp(1.5rem, 4vw, 2rem), clamp(1.5rem, 4vw, 2rem));
@@ -97,9 +95,13 @@
         );
         @include flex(space-between, center);
         gap: clamp(0.25rem, 1vw, 0.625rem);
-        padding-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        &:hover {
+          filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
+            brightness(106%) contrast(106%);
+        }
         span {
-          @include primaryFont(600, clamp(0.875rem, 2vw, 1rem));
+          @include primaryFont(500, clamp(0.5rem, 2vw, 0.875rem));
           color: color($mainColor, 0%);
         }
         img {
@@ -110,9 +112,13 @@
         }
       }
     }
+    .line {
+      height: 78%;
+      border: 1px solid $sectionBgColor;
+    }
     .sales {
-      @include boxSize(10.625rem, 85%);
-      @include verticalFlex;
+      @include boxSize(10.625rem, 78%);
+      @include verticalFlex(center, center);
       background-color: $secondaryColor;
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;

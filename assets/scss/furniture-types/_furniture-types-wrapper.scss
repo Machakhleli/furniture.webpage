@@ -1,11 +1,10 @@
 #furniture-types-wrapper {
-  @include boxSize(100%, 100vh);
+  @include boxSize(100%, 37.5rem);
   background-color: color(#f9f9f9, 0%);
   .furniture-types-container {
     @include boxSize(100%, 100%);
     @include flex(space-between, center);
     gap: clamp(1rem, 2vw, 2rem);
-    margin: 0 auto;
     .furniture-types {
       @include boxSize(31.25rem, 37.5rem);
       @include verticalFlex(flex-end, left);

@@ -1,12 +1,15 @@
 #products-wrapper {
-  width: 100%;
-  min-height: clamp(40rem, 100vh, 120rem);
-  font-family: "Sora", sans-serif;
+  @include boxSize(100%, clamp(30rem, 42vw, 40.6875rem));
+  @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
-  // overflow: hidden;
-  padding-top: 1rem;
+  padding-top: clamp(3rem, 6vh, 6.25rem);
+  padding-bottom: clamp(2rem, 5vh, 3.75rem);
   .products-wrapper {
-    @include boxSize(clamp(90%, 64vw, 64%), clamp(20rem, 50vh, 30.6875rem));
+    @include boxSize(
+      clamp(60rem, 80vw, 76.25rem),
+      clamp(25rem, 35vw, 30.6875rem)
+    );
+    max-width: 76.25rem;
     .product-experience {
       @include boxSize(100%, clamp(10rem, 25vh, 15rem));
       @include flex(space-between, center);
@@ -86,7 +89,7 @@
     .furniture-icon-list {
       @include boxSize(100%, clamp(12rem, 60vh, 18.625rem));
       @include flex(space-between, center);
-      margin: clamp(2rem, 6.25rem, 8vh) auto clamp(1.5rem, 3.75rem, 5vh);
+      // margin: clamp(2rem, 6.25rem, 8vh) auto clamp(1.5rem, 3.75rem, 5vh);
       padding: 0 clamp(1rem, 5vw, 3rem);
       gap: 1rem;
       a {
