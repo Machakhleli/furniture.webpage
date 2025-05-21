@@ -473,26 +473,30 @@
 }
 #products-wrapper {
   width: 100%;
-  height: clamp(30rem, 42vw, 40.6875rem);
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
-  padding-top: clamp(3rem, 6vh, 6.25rem);
-  padding-bottom: clamp(2rem, 5vh, 3.75rem);
 }
 #products-wrapper .products-wrapper {
-  width: clamp(60rem, 80vw, 76.25rem);
-  height: clamp(25rem, 35vw, 30.6875rem);
+  width: 100%;
+  height: auto;
   max-width: 76.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 4vh, 3rem);
 }
 #products-wrapper .products-wrapper .product-experience {
   width: 100%;
-  height: clamp(10rem, 25vh, 15rem);
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: clamp(1rem, 4vh, 3rem) auto clamp(1rem, 4vh, 3rem);
+  flex-wrap: wrap;
+  gap: 2rem;
   padding: 0 clamp(1rem, 5vw, 3rem);
 }
 #products-wrapper .products-wrapper .product-experience .product-search {
@@ -500,6 +504,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  flex: 1;
+  min-width: 280px;
 }
 #products-wrapper .products-wrapper .product-experience .product-search :first-child {
   font-weight: 600;
@@ -526,17 +532,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19.375rem;
-  height: 6rem;
+  width: clamp(15rem, 25vw, 19.375rem);
+  height: clamp(4rem, 6vh, 6rem);
+  flex-shrink: 0;
 }
 #products-wrapper .products-wrapper .product-experience .product-stats .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
 }
 #products-wrapper .products-wrapper .product-experience .product-stats .content .icon {
   width: clamp(1rem, 4vw, 2rem);
+  height: auto;
   border: 0.25rem solid #ffb128;
   border-radius: 6.1875rem;
   margin-right: clamp(0.5rem, 1vw, 1rem);
@@ -561,22 +569,21 @@
   font-family: "Sora", sans-serif;
   color: #5c676d;
 }
-#products-wrapper .products-wrapper .furniture-icon-list {
+#products-wrapper .products-wrapper .product-experience .furniture-icon-list {
   width: 100%;
-  height: clamp(12rem, 60vh, 18.625rem);
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(1rem, 5vw, 3rem);
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
 }
-#products-wrapper .products-wrapper .furniture-icon-list a {
+#products-wrapper .products-wrapper .product-experience .furniture-icon-list a {
   text-decoration: none;
   color: #0b3954;
 }
-#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names {
+#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names {
   width: 11.25rem;
-  height: 14.875rem;
+  height: 12.375rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -585,20 +592,52 @@
   border-radius: 2rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names:hover {
+#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names:hover {
   background-color: white;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
   border-radius: 2rem;
   cursor: pointer;
 }
-#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names img {
-  width: 6rem;
-  height: 6rem;
+#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names img {
+  width: clamp(3rem, 5vw, 6rem);
+  height: clamp(3rem, 5vw, 6rem);
 }
 
+@media (max-width: 1024px) {
+  .product-experience {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .product-stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .furniture-icon-list {
+    justify-content: center;
+  }
+  .product-experience .product-search {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .furniture-icon-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .furniture-icon-list .furniture-names {
+    width: 100%;
+    max-width: 300px;
+  }
+  .product-experience .product-search,
+  .product-experience .product-stats {
+    width: 100%;
+  }
+}
 #furniture-types-wrapper {
   width: 100%;
-  height: 37.5rem;
+  height: auto;
   background-color: #f9f9f9;
 }
 #furniture-types-wrapper .furniture-types-container {
@@ -607,20 +646,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  padding: 0 clamp(1rem, 3vw, 3rem);
+  gap: clamp(1rem, 2vw, 2.5rem);
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types {
-  width: 31.25rem;
-  height: 37.5rem;
+  width: clamp(18rem, 35vw, 37.1875rem);
+  height: clamp(20rem, 37.5vw, 37.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: left;
-  border-radius: 2rem;
+  background-image: 0;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
   color: white;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.875rem;
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types p {
   font-weight: 500;
@@ -666,6 +708,44 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .furniture-types-container {
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .furniture-types-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .furniture-types {
+    width: 100%;
+    height: clamp(18rem, 60vw, 32rem);
+  }
+}
+@media (max-width: 768px) {
+  .furniture-types {
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+  }
+  .furniture-types p,
+  .furniture-types div {
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .furniture-types {
+    height: auto;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  .furniture-types p,
+  .furniture-types div {
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+  }
+}
 #actual-trends-wrapper {
   width: 100%;
   min-height: 100vh;

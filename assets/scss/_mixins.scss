@@ -45,3 +45,9 @@
   background-size: $bgSize;
   background-position: $bgPosition;
 }
+@mixin setPadding($paddingTop, $paddingRight, $paddingBottom, $paddingLeft) {
+  $paddingTop: $paddingTop;
+  $paddingRight: $paddingRight;
+  $paddingBottom: $paddingBottom;
+  $paddingLeft: $paddingRight;
+}

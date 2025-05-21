@@ -1,22 +1,28 @@
 #products-wrapper {
-  @include boxSize(100%, clamp(30rem, 42vw, 40.6875rem));
+  @include boxSize(100%, auto);
   @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
-  padding-top: clamp(3rem, 6vh, 6.25rem);
-  padding-bottom: clamp(2rem, 5vh, 3.75rem);
+  @include setPadding(
+    clamp(3rem, 6vh, 6.25rem),
+    0,
+    clamp(2rem, 5vh, 3.75rem),
+    0
+  );
   .products-wrapper {
-    @include boxSize(
-      clamp(60rem, 80vw, 76.25rem),
-      clamp(25rem, 35vw, 30.6875rem)
-    );
+    @include boxSize(100%, auto);
     max-width: 76.25rem;
+    @include verticalFlex;
+    gap: clamp(2rem, 4vh, 3rem);
     .product-experience {
-      @include boxSize(100%, clamp(10rem, 25vh, 15rem));
+      @include boxSize(100%, auto);
       @include flex(space-between, center);
-      margin: clamp(1rem, 4vh, 3rem) auto clamp(1rem, 4vh, 3rem);
+      flex-wrap: wrap;
+      gap: 2rem;
       padding: 0 clamp(1rem, 5vw, 3rem);
       .product-search {
         @include verticalFlex(center, left);
+        flex: 1;
+        min-width: 280px;
         :first-child {
           @include mainFontStyle(
             600,
@@ -50,12 +56,13 @@
       }
       .product-stats {
         @include flex(center, center);
-        @include boxSize(19.375rem, 6rem);
+        @include boxSize(clamp(15rem, 25vw, 19.375rem), clamp(4rem, 6vh, 6rem));
+        flex-shrink: 0;
         .content {
           @include flex(space-between, center);
-          gap: 1rem;
+          gap: clamp(0.5rem, 2vw, 1rem);
           .icon {
-            width: clamp(1rem, 4vw, 2rem);
+            @include boxSize(clamp(1rem, 4vw, 2rem), auto);
             border: 0.25rem solid $secondaryColor;
             border-radius: 6.1875rem;
             margin-right: clamp(0.5rem, 1vw, 1rem);
@@ -85,33 +92,76 @@
           }
         }
       }
-    }
-    .furniture-icon-list {
-      @include boxSize(100%, clamp(12rem, 60vh, 18.625rem));
-      @include flex(space-between, center);
-      // margin: clamp(2rem, 6.25rem, 8vh) auto clamp(1.5rem, 3.75rem, 5vh);
-      padding: 0 clamp(1rem, 5vw, 3rem);
-      gap: 1rem;
-      a {
-        text-decoration: none;
-        color: color($mainColor, 0%);
-        .furniture-names {
-          @include boxSize(11.25rem, 14.875rem);
-          @include verticalFlex(center, center);
-          background-color: color($sectionBgColor, 2%);
-          border-radius: 2rem;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
-          &:hover {
-            background-color: color($thirdColor, 0%);
-            box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+      .furniture-icon-list {
+        @include boxSize(100%, auto);
+        @include flex(space-between, center);
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        // flex-wrap: wrap;
+        // justify-content: center;
+        a {
+          text-decoration: none;
+          color: color($mainColor, 0%);
+          .furniture-names {
+            @include boxSize(11.25rem, 12.375rem);
+            @include verticalFlex(center, center);
+            background-color: color($sectionBgColor, 2%);
             border-radius: 2rem;
-            cursor: pointer;
-          }
-          img {
-            @include boxSize(6rem, 6rem);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            &:hover {
+              background-color: color($thirdColor, 0%);
+              box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+              border-radius: 2rem;
+              cursor: pointer;
+            }
+            img {
+              @include boxSize(clamp(3rem, 5vw, 6rem), clamp(3rem, 5vw, 6rem));
+            }
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-experience {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .furniture-icon-list {
+    justify-content: center;
+  }
+
+  .product-experience {
+    .product-search {
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .furniture-icon-list {
+    flex-direction: column;
+    align-items: center;
+
+    .furniture-names {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  .product-experience {
+    .product-search,
+    .product-stats {
+      width: 100%;
     }
   }
 }
