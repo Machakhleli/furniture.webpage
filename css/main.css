@@ -149,7 +149,7 @@
 }
 #header .header-bottom-wrapper .sales {
   width: 10.625rem;
-  height: 83%;
+  height: 77%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -569,19 +569,21 @@
   font-family: "Sora", sans-serif;
   color: #5c676d;
 }
-#products-wrapper .products-wrapper .product-experience .furniture-icon-list {
+#products-wrapper .products-wrapper .furniture-icon-list {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: clamp(0.5rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
 }
-#products-wrapper .products-wrapper .product-experience .furniture-icon-list a {
+#products-wrapper .products-wrapper .furniture-icon-list a {
   text-decoration: none;
   color: #0b3954;
 }
-#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names {
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names {
   width: 11.25rem;
   height: 12.375rem;
   display: flex;
@@ -592,13 +594,13 @@
   border-radius: 2rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names:hover {
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names:hover {
   background-color: white;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
   border-radius: 2rem;
   cursor: pointer;
 }
-#products-wrapper .products-wrapper .product-experience .furniture-icon-list a .furniture-names img {
+#products-wrapper .products-wrapper .furniture-icon-list a .furniture-names img {
   width: clamp(3rem, 5vw, 6rem);
   height: clamp(3rem, 5vw, 6rem);
 }
@@ -639,6 +641,7 @@
   width: 100%;
   height: auto;
   background-color: #f9f9f9;
+  padding-top: 5rem;
 }
 #furniture-types-wrapper .furniture-types-container {
   width: 100%;
@@ -663,14 +666,15 @@
   border-radius: 2rem;
   color: white;
   padding-bottom: 1.875rem;
+  transition: all 0.3s ease;
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types p {
   font-weight: 500;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  padding: 0 0 1rem 1.25rem;
+  padding: 0 0 clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types div {
-  padding-left: 1.25rem;
+  padding-left: clamp(1rem, 2vw, 1.25rem);
   transition: transform 0.3s ease;
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types div:hover {
@@ -680,14 +684,14 @@
 #furniture-types-wrapper .furniture-types-container .furniture-types div h2 {
   font-weight: 700;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  padding-bottom: 1rem;
+  padding-bottom: clamp(0.5rem, 1vw, 1rem);
 }
 #furniture-types-wrapper .furniture-types-container .furniture-types div span {
   width: clamp(1.5rem, 3vw, 3rem);
   height: 0;
   display: block;
-  border: 2px solid #ffb128;
-  border-radius: 2px;
+  border: 0.125rem solid #ffb128;
+  border-radius: 0.125rem;
 }
 #furniture-types-wrapper .furniture-types-container .bedroom {
   background-image: url(../../../assets/media/furniture-types-wrapper/furniturestore-home-pic1.webp);
@@ -698,19 +702,13 @@
 #furniture-types-wrapper .furniture-types-container .kitchen {
   background-image: url(../../../assets/media/furniture-types-wrapper/kitchen.png);
 }
-@media (max-width: 768px) {
-  #furniture-types-wrapper .furniture-types-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #furniture-types-wrapper .furniture-types {
-    width: 100%;
-  }
-}
 
-@media (max-width: 1440px) {
+@media (max-width: 1280px) {
   .furniture-types-container {
     justify-content: center;
+  }
+  .furniture-types {
+    flex: 1 1 clamp(18rem, 45vw, 32rem);
   }
 }
 @media (max-width: 1024px) {
@@ -720,7 +718,7 @@
   }
   .furniture-types {
     width: 100%;
-    height: clamp(18rem, 60vw, 32rem);
+    height: clamp(20rem, 60vw, 32rem);
   }
 }
 @media (max-width: 768px) {
@@ -736,40 +734,48 @@
 @media (max-width: 480px) {
   .furniture-types {
     height: auto;
-    padding-bottom: 1rem;
     text-align: center;
   }
   .furniture-types p,
   .furniture-types div {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
     align-items: center;
+  }
+  .furniture-types div h2 {
+    text-align: center;
+  }
+  .furniture-types div span {
+    margin: 0 auto;
   }
 }
 #actual-trends-wrapper {
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   background-color: #f9f9f9;
 }
 #actual-trends-wrapper .actual-trend-container {
   width: 85%;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: clamp(3rem, 8vw, 6.25rem) auto;
+  gap: clamp(2rem, 4vw, 3rem);
+  flex-wrap: wrap;
 }
 #actual-trends-wrapper .actual-trend-container .trend-main-photo {
   width: 55%;
-  height: 100%;
+  height: clamp(25rem, 50vw, 40rem);
   background-image: url(../../../assets/media/actual-trends/furniturestore-home-pic4.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border-radius: 1.5rem;
+  flex-shrink: 0;
 }
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper {
-  width: 45%;
-  height: 100%;
+  width: 42%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -777,8 +783,8 @@
   padding-left: clamp(1rem, 5vw, 3rem);
 }
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper .trend-text-container {
-  width: 85%;
-  height: 50%;
+  width: 100%;
+  height: auto;
 }
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper .trend-text-container span,
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper .trend-text-container h2 {
@@ -789,6 +795,7 @@
   font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
   font-family: "Sora", sans-serif;
   padding: 0 clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem);
+  display: block;
 }
 #actual-trends-wrapper .actual-trend-container .trend-text-wrapper .trend-text-container h2 {
   font-weight: 700;
@@ -813,7 +820,7 @@
   background-color: #ffb128;
   color: #ffffff;
   border-radius: 5rem;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease;
   outline: none;
   border: none;
 }
@@ -822,6 +829,54 @@
   cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+  .actual-trend-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .trend-main-photo,
+  .trend-text-wrapper {
+    width: 100%;
+  }
+  .trend-main-photo {
+    height: clamp(20rem, 50vw, 28rem);
+  }
+  .trend-text-wrapper {
+    padding: 0;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .trend-text-wrapper .trend-text-container span,
+  .trend-text-wrapper .trend-text-container h2,
+  .trend-text-wrapper .trend-text-container p {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .trend-text-wrapper .trend-text-container button {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .trend-main-photo {
+    height: clamp(16rem, 50vw, 24rem);
+    border-radius: 1rem;
+  }
+  .trend-text-container {
+    padding: 0 1rem;
+  }
+  .trend-text-container h2 {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+  .trend-text-container p {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+  .trend-text-container button {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+  }
+}
 #furniture-selector {
   width: 100%;
   min-height: 100vh;

@@ -117,7 +117,7 @@
       border: 1px solid $sectionBgColor;
     }
     .sales {
-      @include boxSize(10.625rem, 83%);
+      @include boxSize(10.625rem, 77%);
       @include verticalFlex(center, center);
       background-color: $secondaryColor;
       border-top-left-radius: 0.5rem;

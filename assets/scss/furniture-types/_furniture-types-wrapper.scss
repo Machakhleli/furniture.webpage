@@ -1,6 +1,7 @@
 #furniture-types-wrapper {
   @include boxSize(100%, auto);
   background-color: color(#f9f9f9, 0%);
+  padding-top: 5rem;
   .furniture-types-container {
     @include boxSize(100%, 100%);
     @include flex(space-between, center);
@@ -17,12 +18,13 @@
       border-radius: 2rem;
       color: color($thirdColor, 0%);
       padding-bottom: 1.875rem;
+      transition: all 0.3s ease;
       p {
         @include primaryFont(500, clamp(0.875rem, 1.5vw, 1rem));
-        padding: 0 0 1rem 1.25rem;
+        padding: 0 0 clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
       }
       div {
-        padding-left: 1.25rem;
+        padding-left: clamp(1rem, 2vw, 1.25rem);
         transition: transform 0.3s ease;
         &:hover {
           transform: translateY(-0.5rem);
@@ -30,13 +32,13 @@
         }
         h2 {
           @include primaryFont(700, clamp(1.5rem, 4vw, 2.5rem));
-          padding-bottom: 1rem;
+          padding-bottom: clamp(0.5rem, 1vw, 1rem);
         }
         span {
           @include boxSize(clamp(1.5rem, 3vw, 3rem), 0);
           display: block;
-          border: 2px solid $secondaryColor;
-          border-radius: 2px;
+          border: 0.125rem solid $secondaryColor;
+          border-radius: 0.125rem;
         }
       }
     }
@@ -50,21 +52,15 @@
       background-image: url(../../../assets/media/furniture-types-wrapper/kitchen.png);
     }
   }
-  @media (max-width: 768px) {
-    .furniture-types-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .furniture-types {
-      width: 100%;
-    }
-  }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1280px) {
   .furniture-types-container {
     justify-content: center;
+  }
+
+  .furniture-types {
+    flex: 1 1 clamp(18rem, 45vw, 32rem);
   }
 }
 
@@ -76,7 +72,7 @@
 
   .furniture-types {
     width: 100%;
-    height: clamp(18rem, 60vw, 32rem);
+    height: clamp(20rem, 60vw, 32rem);
   }
 }
 
@@ -95,14 +91,22 @@
 @media (max-width: 480px) {
   .furniture-types {
     height: auto;
-    padding-bottom: 1rem;
     text-align: center;
 
     p,
     div {
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0;
       align-items: center;
+    }
+
+    div {
+      h2 {
+        text-align: center;
+      }
+
+      span {
+        margin: 0 auto;
+      }
     }
   }
 }

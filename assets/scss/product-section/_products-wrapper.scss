@@ -3,7 +3,7 @@
   @include flex(center, center);
   background-color: color(#f9f9f9, 0%);
   @include setPadding(
-    clamp(3rem, 6vh, 6.25rem),
+    clamp(3rem, 8vh, 8.25rem),
     0,
     clamp(2rem, 5vh, 3.75rem),
     0
@@ -92,30 +92,30 @@
           }
         }
       }
-      .furniture-icon-list {
-        @include boxSize(100%, auto);
-        @include flex(space-between, center);
-        gap: clamp(0.5rem, 2vw, 1.5rem);
-        // flex-wrap: wrap;
-        // justify-content: center;
-        a {
-          text-decoration: none;
-          color: color($mainColor, 0%);
-          .furniture-names {
-            @include boxSize(11.25rem, 12.375rem);
-            @include verticalFlex(center, center);
-            background-color: color($sectionBgColor, 2%);
+    }
+    .furniture-icon-list {
+      @include boxSize(100%, auto);
+      @include flex(space-between, center);
+      gap: clamp(0.5rem, 2vw, 1.5rem);
+      flex-wrap: wrap;
+      justify-content: center;
+      a {
+        text-decoration: none;
+        color: color($mainColor, 0%);
+        .furniture-names {
+          @include boxSize(11.25rem, 12.375rem);
+          @include verticalFlex(center, center);
+          background-color: color($sectionBgColor, 2%);
+          border-radius: 2rem;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          &:hover {
+            background-color: color($thirdColor, 0%);
+            box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
             border-radius: 2rem;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            &:hover {
-              background-color: color($thirdColor, 0%);
-              box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
-              border-radius: 2rem;
-              cursor: pointer;
-            }
-            img {
-              @include boxSize(clamp(3rem, 5vw, 6rem), clamp(3rem, 5vw, 6rem));
-            }
+            cursor: pointer;
+          }
+          img {
+            @include boxSize(clamp(3rem, 5vw, 6rem), clamp(3rem, 5vw, 6rem));
           }
         }
       }

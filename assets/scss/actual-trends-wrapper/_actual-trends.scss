@@ -1,29 +1,29 @@
 #actual-trends-wrapper {
-  // @include boxSize(100%, auto);
-  width: 100%;
-  min-height: 100vh;
+  @include boxSize(100%, auto);
   background-color: $sectionBgColor;
-  // padding: 3rem 0;
-  // overflow: hidden;
   .actual-trend-container {
-    @include boxSize(85%, 100vh);
+    @include boxSize(85%, auto);
     @include flex(space-between, center);
     margin: clamp(3rem, 8vw, 6.25rem) auto;
+    gap: clamp(2rem, 4vw, 3rem);
+    flex-wrap: wrap;
     .trend-main-photo {
-      @include boxSize(55%, 100%);
+      @include boxSize(55%, clamp(25rem, 50vw, 40rem));
       @include setBackground(
         url(../../../assets/media/actual-trends/furniturestore-home-pic4.png),
         no-repeat,
         cover,
         center
       );
+      border-radius: 1.5rem;
+      flex-shrink: 0;
     }
     .trend-text-wrapper {
-      @include boxSize(45%, 100%);
+      @include boxSize(42%, auto);
       @include verticalFlex(center, left);
       padding-left: clamp(1rem, 5vw, 3rem);
       .trend-text-container {
-        @include boxSize(85%, 50%);
+        @include boxSize(100%, auto);
         span,
         h2 {
           color: $mainColor;
@@ -37,6 +37,7 @@
           );
           padding: 0 clamp(0.5rem, 1.5vw, 0.75rem)
             clamp(0.75rem, 1.5vw, 1.25rem);
+          display: block;
         }
         h2 {
           @include mainFontStyle(
@@ -72,7 +73,7 @@
           background-color: $secondaryColor;
           color: $thirdColor;
           border-radius: 5rem;
-          transition: 0.3s ease;
+          transition: background-color 0.3s ease;
           outline: none;
           border: none;
 
@@ -82,6 +83,67 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .actual-trend-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trend-main-photo,
+  .trend-text-wrapper {
+    width: 100%;
+  }
+
+  .trend-main-photo {
+    height: clamp(20rem, 50vw, 28rem);
+  }
+
+  .trend-text-wrapper {
+    padding: 0;
+    margin-top: 2rem;
+    text-align: center;
+
+    .trend-text-container {
+      span,
+      h2,
+      p {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .trend-main-photo {
+    height: clamp(16rem, 50vw, 24rem);
+    border-radius: 1rem;
+  }
+
+  .trend-text-container {
+    padding: 0 1rem;
+
+    h2 {
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+
+    button {
+      width: 100%;
+      height: 3rem;
+      font-size: 1rem;
     }
   }
 }
