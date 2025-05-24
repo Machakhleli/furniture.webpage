@@ -369,12 +369,12 @@
     line-height: clamp(2.5rem, 5.5vw, 4rem);
     margin: clamp(0.5rem, 1.5vh, 1rem) 0;
   }
-  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper {
+  #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper {
     max-width: 20rem;
     height: clamp(2rem, 5vh, 2.5rem);
     gap: clamp(0.75rem, 2vw, 1.25rem);
   }
-  #hero-section .hero-bg .hero-content-container .hero-text .main-buttons-wrapper > button {
+  #hero-section .hero-bg .hero-content-container .hero-text > .main-buttons-wrapper > button {
     max-width: 8rem;
     font-size: clamp(0.625rem, 1.3vw, 0.875rem);
   }
@@ -889,22 +889,23 @@
   align-items: center;
 }
 #furniture-selector .furniture-selector-container {
-  width: clamp(64rem, 75vw, 76.25rem);
-  height: 100%;
+  width: 100%;
+  max-width: clamp(64rem, 90vw, 1220px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(clamp(18rem, 22vw, 24rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 3rem);
 }
 #furniture-selector .furniture-selector-container .furniture-card {
-  width: clamp(18rem, 23vw, 23.375rem);
-  height: clamp(25rem, 33vw, 30.625rem);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(2.5rem, 6vw, 4.625rem);
-  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+  gap: clamp(2rem, 4vw, 4.625rem);
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(2rem, 4vw, 3rem);
   background-color: #f2f2f2;
   border-radius: clamp(0.75rem, 1.5vw, 1rem);
 }
@@ -916,7 +917,7 @@
   cursor: pointer;
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items:hover .card-item-icons {
-  display: block;
+  display: flex;
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items span {
   position: absolute;
@@ -926,6 +927,7 @@
   padding: 0.3125rem;
   border-radius: 0.75rem;
   color: #ffffff;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items img {
   width: clamp(15rem, 20vw, 20rem);
@@ -940,6 +942,7 @@
   top: clamp(0.75rem, 1vw, 1rem);
   right: clamp(1rem, 2vw, 1.5rem);
   display: none;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons {
   width: clamp(1.5rem, 2vw, 2rem);
@@ -947,120 +950,136 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0.5rem, 1vw, 0.625rem);
   background-color: #fff;
   border-radius: 50%;
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons img {
   width: clamp(1rem, 1.25vw, 1.25rem);
   height: clamp(1rem, 1.25vw, 1.25rem);
-  transition: ease;
+  transition: filter 0.3s ease;
 }
 #furniture-selector .furniture-selector-container .furniture-card .furniture-card-items .card-item-icons .icons img:hover {
   filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg) brightness(106%) contrast(106%);
 }
 #furniture-selector .go-to-shop-btn {
-  width: clamp(8rem, 10vw, 10.3125rem);
-  height: clamp(2.25rem, 3vw, 2.875rem);
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
   font-weight: 600;
-  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-size: clamp(0.875rem, 1.2vw, 1.125rem);
   font-family: "Sora", sans-serif;
   margin: clamp(1.5rem, 3vw, 2rem) auto;
-  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.25rem);
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(2rem, 5vw, 3rem);
   border-radius: clamp(1.25rem, 2vw, 2rem);
   border: none;
   text-align: center;
   color: #ffb128;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 #furniture-selector .go-to-shop-btn:hover {
   background-color: #ffb128;
   color: #ffffff;
-  cursor: pointer;
+}
+@media (min-width: 120rem) {
+  #furniture-selector .furniture-card {
+    gap: 5rem;
+    padding: 2rem;
+  }
+  #furniture-selector .furniture-card-items .card-item-icons {
+    gap: 1.25rem;
+  }
 }
 
 #magazine {
   width: 100%;
-  height: 100vh;
   min-height: 100vh;
   background-color: #f9f9f9;
 }
 #magazine .magazine-content-container {
-  position: relative;
-  width: clamp(68.75rem, 63.5vw, 76.25rem);
-  height: clamp(34.5rem, 28vw, 40rem);
+  max-width: clamp(1100px, 80vw, 1220px);
+  margin: 0 auto;
+  padding: 0 auto 11.25rem auto;
+  background-color: #ffb128;
+  border-radius: clamp(16px, 2vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  background-color: #ffb128;
-  border-radius: clamp(1rem, 2vw, 2rem);
+  gap: clamp(32px, 4vw, 48px);
 }
 #magazine .magazine-content-container .magazine-top-content {
-  width: clamp(62rem, 58vw, 69.375rem);
-  height: clamp(25rem, 24vw, 28.5rem);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 32px);
   align-items: center;
+  position: relative;
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-img {
-  position: absolute;
-  top: -2.5rem;
-  width: 50%;
-  height: clamp(25rem, 24vw, 28.5rem);
+  flex: 1 1 45%;
+  max-width: 50%;
+  min-width: 280px;
+  position: relative;
+  top: -5rem;
+}
+#magazine .magazine-content-container .magazine-top-content .magazine-img img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-text {
-  width: 50%;
-  height: clamp(17.5rem, 15vw, 20rem);
+  flex: 1 1 45%;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  margin-left: 50%;
-  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(22px, 2vw, 24px);
+  padding: clamp(16px, 3vw, 32px);
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-text span {
   font-weight: 600;
-  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+  font-size: clamp(12px, 1vw, 14px);
   font-family: "Sora", sans-serif;
   color: #ffffff;
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-text h2 {
   font-weight: 700;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(32px, 3vw, 48px);
   font-family: "Sora", sans-serif;
   color: #ffffff;
-  padding-bottom: clamp(0.75rem, 1.5vw, 1rem);
-  padding-right: clamp(3rem, 10vw, 9rem);
+  padding-bottom: clamp(12px, 1.5vw, 16px);
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-text a button {
-  width: clamp(9rem, 10vw, 10.125rem);
-  height: clamp(2.5rem, 2.8vw, 2.75rem);
-  padding: clamp(0.625rem, 1vw, 0.9375rem) clamp(1.5rem, 3vw, 2.1875rem);
+  width: clamp(128px, 20vw, 162px);
+  height: clamp(40px, 4vw, 44px);
+  padding: clamp(10px, 1vw, 15px) clamp(24px, 4vw, 36px);
   background-color: #0b3954;
   color: #ffffff;
-  border-radius: clamp(1.5rem, 2vw, 2rem);
+  border-radius: clamp(24px, 2vw, 32px);
   border: none;
+  font-weight: 600;
+  font-size: clamp(14px, 1vw, 16px);
 }
 #magazine .magazine-content-container .magazine-top-content .magazine-text a button:hover {
-  cursor: pointer;
   background-color: #ffffff;
   color: #0b3954;
+  cursor: pointer;
 }
 #magazine .magazine-content-container .magazine-bottom-content {
-  width: clamp(60rem, 65vw, 68.625rem);
-  height: clamp(7rem, 8vw, 8.4375rem);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
+  gap: clamp(16px, 2vw, 32px);
 }
 #magazine .magazine-content-container .magazine-bottom-content .magazine-pages {
-  width: clamp(18rem, 24vw, 22.875rem);
-  height: clamp(7rem, 8vw, 8.4375rem);
+  flex: 1 1 30%;
+  min-width: 15.625rem;
+  padding: 0 clamp(16px, 2vw, 24px);
   text-align: center;
-  padding: 0 clamp(0.75rem, 2vw, 1.5rem);
-  transition: ease;
+  transition: transform 0.3s ease;
 }
 #magazine .magazine-content-container .magazine-bottom-content .magazine-pages:hover {
   transform: scale(1.05);
@@ -1069,27 +1088,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(1rem, 2vw, 1.75rem);
+  gap: clamp(16px, 2vw, 24px);
   color: #ffffff;
-  margin-bottom: clamp(0.5rem, 1vw, 1rem);
+  margin-bottom: clamp(8px, 1vw, 16px);
 }
 #magazine .magazine-content-container .magazine-bottom-content .magazine-pages div span {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: bolder;
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 24px);
 }
 #magazine .magazine-content-container .magazine-bottom-content .magazine-pages div p {
   font-weight: 600;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(19.2px, 2vw, 24px);
   font-family: "Sora", sans-serif;
 }
 #magazine .magazine-content-container .magazine-bottom-content .magazine-pages .pages {
   font-weight: 400;
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-size: clamp(14px, 1.5vw, 16px);
   font-family: "Sora", sans-serif;
   color: white;
-  opacity: 50%;
-  margin-top: clamp(0.5rem, 1vw, 1rem);
+  opacity: 0.5;
   text-align: left;
+  margin-top: clamp(8px, 1vw, 16px);
+}
+
+#about-us {
+  width: 100%;
+  height: auto;
+  background-color: #0b3954;
+}
+#about-us .about-us-container {
+  width: clamp(48rem, 70vw, 76.25rem);
+  height: clamp(24.375rem, 50vh, 38.125rem);
+  margin: 3.75rem auto;
+  max-width: 76.25rem;
 }
 
 * {

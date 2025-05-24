@@ -1,116 +1,43 @@
-// #furniture-selector {
-//   width: 100%;
-//   min-height: 100vh;
-//   background-color: $sectionBgColor;
-//   margin-top: 3rem;
-//   padding-top: 7rem;
-//   // padding-bottom: 3rem;
-//   @include verticalFlex;
-//   .furniture-selector-container {
-//     @include boxSize(76.25rem, 100%);
-//     margin: 0 auto;
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     gap: 1.5rem;
-//     .furniture-card {
-//       @include boxSize(23.375rem, 30.625rem);
-//       @include verticalFlex(center, center);
-//       gap: 4.625rem;
-//       padding: 1.5rem 1.5rem 3rem 1.5rem;
-//       background-color: color($thirdColor, 5%);
-//       border-radius: 1rem;
-//       span {
-//         @include mainFontStyle(400, 1rem, 1rem, 0);
-//         color: $mainColor;
-//         text-align: center;
-//       }
-//       .furniture-card-items {
-//         @include flex(center, center); // ეს გადასამოწმებელი იქნება
-//         position: relative;
-//         &:hover .card-item-icons {
-//           cursor: pointer;
-//           display: block;
-//         }
-//         span {
-//           position: absolute;
-//           top: 1rem;
-//           left: 1rem;
-//         }
-//         img {
-//           @include boxSize(20rem, 20rem);
-//         }
-//         .card-item-icons {
-//           @include verticalFlex(center, space-between);
-//           position: absolute;
-//           top: 1rem;
-//           right: 1.5rem;
-//           display: none;
-//           .icons {
-//             @include boxSize(2rem, 2rem);
-//             @include flex(center, center);
-//             gap: 10px;
-//             background-color: #fff;
-//             border-radius: 50%;
-//             img {
-//               @include boxSize(1.25rem, 1.25rem);
-//               transition: ease;
-//               &:hover {
-//                 filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
-//                   brightness(106%) contrast(106%);
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   .go-to-shop-btn {
-//     @include boxSize(10.3125rem, 2.875rem);
-//     @include mainFontStyle(600, 0.875rem, 0.875rem, o);
-//     margin: 2rem auto;
-//     padding: 1rem 2.25rem;
-//     border-radius: 2rem;
-//     border: none;
-//     text-align: center;
-//     color: $secondaryColor;
-//     &:hover {
-//       background-color: $secondaryColor;
-//       color: $thirdColor;
-//       cursor: pointer;
-//     }
-//   }
-// }
 #furniture-selector {
   width: 100%;
   min-height: 100vh;
   background-color: $sectionBgColor;
   margin-top: clamp(2rem, 3vw, 3rem);
   padding-top: clamp(4rem, 6vw, 7rem);
+
   @include verticalFlex;
+
   .furniture-selector-container {
-    @include boxSize(clamp(64rem, 75vw, 76.25rem), 100%); // max: 1220px
+    width: 100%;
+    max-width: clamp(64rem, 90vw, 1220px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 2vw, 1.5rem);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(18rem, 22vw, 24rem), 1fr)
+    );
+    gap: clamp(1rem, 2.5vw, 3rem);
+
     .furniture-card {
-      @include boxSize(
-        clamp(18rem, 23vw, 23.375rem),
-        clamp(25rem, 33vw, 30.625rem)
-      );
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       @include verticalFlex(center, center);
-      gap: clamp(2.5rem, 6vw, 4.625rem);
+      gap: clamp(2rem, 4vw, 4.625rem);
       padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem)
-        clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+        clamp(2rem, 4vw, 3rem);
       background-color: color($thirdColor, 5%);
       border-radius: clamp(0.75rem, 1.5vw, 1rem);
+
       .furniture-card-items {
         @include flex(center, center);
         position: relative;
         cursor: pointer;
+
         &:hover .card-item-icons {
-          display: block;
+          display: flex;
         }
+
         span {
           position: absolute;
           top: clamp(0.75rem, 1vw, 1rem);
@@ -119,34 +46,40 @@
           padding: 0.3125rem;
           border-radius: 0.75rem;
           color: $thirdColor;
+          font-size: clamp(0.75rem, 1vw, 0.875rem);
         }
+
         img {
           @include boxSize(
             clamp(15rem, 20vw, 20rem),
             clamp(15rem, 20vw, 20rem)
           );
         }
+
         .card-item-icons {
           @include verticalFlex(center, space-between);
           position: absolute;
           top: clamp(0.75rem, 1vw, 1rem);
           right: clamp(1rem, 2vw, 1.5rem);
           display: none;
+          gap: clamp(0.75rem, 1.5vw, 1rem);
+
           .icons {
             @include boxSize(
               clamp(1.5rem, 2vw, 2rem),
               clamp(1.5rem, 2vw, 2rem)
             );
             @include flex(center, center);
-            gap: clamp(0.5rem, 1vw, 0.625rem);
             background-color: #fff;
             border-radius: 50%;
+
             img {
               @include boxSize(
                 clamp(1rem, 1.25vw, 1.25rem),
                 clamp(1rem, 1.25vw, 1.25rem)
               );
-              transition: ease;
+              transition: filter 0.3s ease;
+
               &:hover {
                 filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
                   brightness(106%) contrast(106%);
@@ -157,28 +90,39 @@
       }
     }
   }
+
   .go-to-shop-btn {
-    @include boxSize(
-      clamp(8rem, 10vw, 10.3125rem),
-      clamp(2.25rem, 3vw, 2.875rem)
-    );
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
     @include mainFontStyle(
       600,
-      clamp(0.75rem, 1vw, 0.875rem),
-      clamp(0.75rem, 1vw, 0.875rem),
+      clamp(0.875rem, 1.2vw, 1.125rem),
+      clamp(1rem, 2vw, 1.5rem),
       0
     );
     margin: clamp(1.5rem, 3vw, 2rem) auto;
-    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.25rem);
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(2rem, 5vw, 3rem);
     border-radius: clamp(1.25rem, 2vw, 2rem);
     border: none;
     text-align: center;
     color: $secondaryColor;
-
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
     &:hover {
       background-color: $secondaryColor;
       color: $thirdColor;
-      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 120rem) {
+    .furniture-card {
+      gap: 5rem;
+      padding: 2rem;
+    }
+    .furniture-card-items .card-item-icons {
+      gap: 1.25rem;
     }
   }
 }

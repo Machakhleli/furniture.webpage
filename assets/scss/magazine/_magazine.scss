@@ -1,103 +1,96 @@
 #magazine {
-  @include boxSize(100%, 100vh);
+  width: 100%;
   min-height: 100vh;
   background-color: $sectionBgColor;
   .magazine-content-container {
-    position: relative;
-    @include boxSize(
-      clamp(68.75rem, 63.5vw, 76.25rem),
-      clamp(34.5rem, 28vw, 40rem)
-    );
-    @include verticalFlex;
+    max-width: clamp(1100px, 80vw, 1220px);
     margin: 0 auto;
+    padding: 0 auto 11.25rem auto;
     background-color: $secondaryColor;
-    border-radius: clamp(1rem, 2vw, 2rem);
+    border-radius: clamp(16px, 2vw, 32px);
+    @include verticalFlex;
+    gap: clamp(32px, 4vw, 48px);
     .magazine-top-content {
-      @include boxSize(
-        clamp(62rem, 58vw, 69.375rem),
-        clamp(25rem, 24vw, 28.5rem)
-      );
-      @include flex(space-between, center);
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(16px, 2vw, 32px);
+      align-items: center;
+      position: relative;
       .magazine-img {
-        position: absolute;
-        top: -2.5rem;
-        @include boxSize(50%, clamp(25rem, 24vw, 28.5rem));
+        flex: 1 1 45%;
+        max-width: 50%;
+        min-width: 280px;
+        position: relative;
+        top: -5rem;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
       }
       .magazine-text {
-        @include boxSize(50%, clamp(17.5rem, 15vw, 20rem));
-        @include verticalFlex(left, left);
-        margin-left: 50%;
-        gap: 15px;
+        flex: 1 1 45%;
+        min-width: 280px;
+        @include verticalFlex(center, flex-start);
+        gap: clamp(22px, 2vw, 24px);
+        padding: clamp(16px, 3vw, 32px);
         span {
-          @include mainFontStyle(
-            600,
-            clamp(0.75rem, 0.9vw, 0.875rem),
-            1.125rem,
-            0
-          );
+          @include mainFontStyle(600, clamp(12px, 1vw, 14px), 18px, 0);
           color: $thirdColor;
         }
         h2 {
           @include mainFontStyle(
             700,
-            clamp(2rem, 3vw, 3rem),
-            clamp(2.5rem, 3.5vw, 3.4375rem),
+            clamp(32px, 3vw, 48px),
+            clamp(40px, 4vw, 56px),
             0
           );
           color: $thirdColor;
-          padding-bottom: clamp(0.75rem, 1.5vw, 1rem);
-          padding-right: clamp(3rem, 10vw, 9rem);
+          padding-bottom: clamp(12px, 1.5vw, 16px);
         }
         a button {
-          @include boxSize(
-            clamp(9rem, 10vw, 10.125rem),
-            clamp(2.5rem, 2.8vw, 2.75rem)
-          );
-          padding: clamp(0.625rem, 1vw, 0.9375rem) clamp(1.5rem, 3vw, 2.1875rem);
+          @include boxSize(clamp(128px, 20vw, 162px), clamp(40px, 4vw, 44px));
+          padding: clamp(10px, 1vw, 15px) clamp(24px, 4vw, 36px);
           background-color: $mainColor;
           color: $thirdColor;
-          border-radius: clamp(1.5rem, 2vw, 2rem);
+          border-radius: clamp(24px, 2vw, 32px);
           border: none;
+          @include primaryFont(600, clamp(14px, 1vw, 16px));
           &:hover {
-            cursor: pointer;
             background-color: $thirdColor;
             color: $mainColor;
+            cursor: pointer;
           }
         }
       }
     }
     .magazine-bottom-content {
-      @include boxSize(
-        clamp(60rem, 65vw, 68.625rem),
-        clamp(7rem, 8vw, 8.4375rem)
-      );
-      @include flex(space-between, center);
-      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: clamp(16px, 2vw, 32px);
       .magazine-pages {
-        @include boxSize(
-          clamp(18rem, 24vw, 22.875rem),
-          clamp(7rem, 8vw, 8.4375rem)
-        );
+        flex: 1 1 30%;
+        min-width: 15.625rem;
+        padding: 0 clamp(16px, 2vw, 24px);
         text-align: center;
-        padding: 0 clamp(0.75rem, 2vw, 1.5rem);
-        transition: ease;
+        transition: transform 0.3s ease;
         &:hover {
           transform: scale(1.05);
         }
         div {
           @include flex(space-between, center);
-          gap: clamp(1rem, 2vw, 1.75rem);
+          gap: clamp(16px, 2vw, 24px);
           color: $thirdColor;
-          margin-bottom: clamp(0.5rem, 1vw, 1rem);
+          margin-bottom: clamp(8px, 1vw, 16px);
           span {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: bolder;
+            @include primaryFont(700, clamp(16px, 2vw, 24px));
           }
           p {
             @include mainFontStyle(
               600,
-              clamp(1.2rem, 2vw, 1.5rem),
-              clamp(1.5rem, 2.5vw, 1.75rem),
+              clamp(19.2px, 2vw, 24px),
+              clamp(24px, 2.5vw, 28px),
               0
             );
           }
@@ -105,14 +98,14 @@
         .pages {
           @include mainFontStyle(
             400,
-            clamp(0.875rem, 1.5vw, 1rem),
-            clamp(1.25rem, 2vw, 1.5rem),
+            clamp(14px, 1.5vw, 16px),
+            clamp(20px, 2vw, 24px),
             0
           );
           color: color($thirdColor, 0);
-          opacity: 50%;
-          margin-top: clamp(0.5rem, 1vw, 1rem);
+          opacity: 0.5;
           text-align: left;
+          margin-top: clamp(8px, 1vw, 16px);
         }
       }
     }
