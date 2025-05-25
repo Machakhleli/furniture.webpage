@@ -1,12 +1,13 @@
 #about-us {
-  @include boxSize(100%, auto);
+  @include boxSize(100%, 100vh);
   background-color: $mainColor;
   .about-us-container {
-    @include boxSize(
-      clamp(48rem, 70vw, 76.25rem),
-      clamp(24.375rem, 50vh, 38.125rem)
-    );
+    @include boxSize(1220px, 610px);
+    @include verticalFlex(center, center);
+    max-width: 1220px;
     margin: 3.75rem auto;
-    max-width: 76.25rem;
+    .experiecne-wrapper {
+      @include flex(space-between, center);
+    }
   }
 }

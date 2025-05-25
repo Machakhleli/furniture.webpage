@@ -1113,14 +1113,23 @@
 
 #about-us {
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-color: #0b3954;
 }
 #about-us .about-us-container {
-  width: clamp(48rem, 70vw, 76.25rem);
-  height: clamp(24.375rem, 50vh, 38.125rem);
+  width: 1220px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1220px;
   margin: 3.75rem auto;
-  max-width: 76.25rem;
+}
+#about-us .about-us-container .experiecne-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 * {
