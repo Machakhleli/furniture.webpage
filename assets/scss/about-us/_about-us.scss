@@ -2,12 +2,25 @@
   @include boxSize(100%, 100vh);
   background-color: $mainColor;
   .about-us-container {
-    @include boxSize(1220px, 610px);
+    @include boxSize(76.25rem, 38.125rem);
     @include verticalFlex(center, center);
-    max-width: 1220px;
-    margin: 3.75rem auto;
+    max-width: 76.25rem;
+    margin: 60px auto;
     .experiecne-wrapper {
       @include flex(space-between, center);
+      .text-wrapper {
+        @include boxSize(610px, 264px);
+        p {
+          @include mainFontStyle(600, 1.25rem, 1.75rem, 0);
+          @include setPadding(0, 0.75rem, 2.5rem, 0.75rem);
+          color: $thirdColor;
+        }
+        span {
+          font-family: "Poppins", sans-serif;
+          @include mainFontStyle(400, 16px, 24px, 0);
+          color: $secondaryColor;
+        }
+      }
     }
   }
 }

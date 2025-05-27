@@ -1117,19 +1117,36 @@
   background-color: #0b3954;
 }
 #about-us .about-us-container {
-  width: 1220px;
-  height: 610px;
+  width: 76.25rem;
+  height: 38.125rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1220px;
-  margin: 3.75rem auto;
+  max-width: 76.25rem;
+  margin: 60px auto;
 }
 #about-us .about-us-container .experiecne-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper {
+  width: 610px;
+  height: 264px;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper p {
+  font-weight: 600;
+  font-size: 1.25rem;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+  color: #ffb128;
 }
 
 * {
