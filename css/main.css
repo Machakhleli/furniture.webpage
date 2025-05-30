@@ -478,6 +478,10 @@
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
+  padding-top: clamp(3rem, 8vh, 8.25rem);
+  padding-right: 0;
+  padding-bottom: clamp(2rem, 5vh, 3.75rem);
+  padding-left: 0;
 }
 #products-wrapper .products-wrapper {
   width: 100%;
@@ -1124,16 +1128,25 @@
   justify-content: center;
   align-items: center;
   max-width: 76.25rem;
-  margin: 60px auto;
+  margin: 0 auto;
 }
 #about-us .about-us-container .experiecne-wrapper {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
+  gap: 550px;
 }
 #about-us .about-us-container .experiecne-wrapper .text-wrapper {
-  width: 610px;
-  height: 264px;
+  width: 38.125rem;
+  height: 16.5rem;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper p,
+#about-us .about-us-container .experiecne-wrapper .text-wrapper span {
+  padding-top: 5.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1rem;
 }
 #about-us .about-us-container .experiecne-wrapper .text-wrapper p {
   font-weight: 600;
@@ -1144,9 +1157,97 @@
 #about-us .about-us-container .experiecne-wrapper .text-wrapper span {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Sora", sans-serif;
   color: #ffb128;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper button {
+  width: 9.125rem;
+  height: 2.75rem;
+  background-color: #ffb128;
+  color: #ffffff;
+  border-radius: 80px;
+  border: none;
+}
+#about-us .about-us-container .experiecne-wrapper .text-wrapper button:hover {
+  cursor: pointer;
+  background-color: #093046;
+  transition: ease 0.3s;
+}
+#about-us .about-us-container .experiecne-wrapper .experience {
+  position: absolute;
+  top: 6.25rem;
+  left: 44.375rem;
+  width: 11.1875rem;
+  height: 17.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(49, 102, 132, 0.45);
+  opacity: 80%;
+  border-radius: 2rem;
+  z-index: 3;
+}
+#about-us .about-us-container .experiecne-wrapper .experience:hover {
+  transform: translateY(-0.625rem);
+  transition: ease 0.3s;
+}
+#about-us .about-us-container .experiecne-wrapper .experience span {
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: "Sora", sans-serif;
+  color: #ffb128;
+}
+#about-us .about-us-container .experiecne-wrapper .experience p {
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+  text-align: center;
+}
+#about-us .about-us-container .experiecne-wrapper .coworker > img {
+  position: absolute;
+  top: -5.5rem;
+  right: -3.125rem;
+  border-radius: 18.75rem;
+}
+#about-us .about-us-container .about-us-stats-container {
+  width: 100%;
+  height: 9.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12.5rem;
+}
+#about-us .about-us-container .about-us-stats-container .stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+#about-us .about-us-container .about-us-stats-container .stats > span {
+  border: 0.125rem solid #ffb128;
+  width: 1.5625rem;
+  height: 0;
+  border-radius: 6.1875rem;
+}
+#about-us .about-us-container .about-us-stats-container .stats div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#about-us .about-us-container .about-us-stats-container .stats div > span {
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+}
+#about-us .about-us-container .about-us-stats-container .stats div span:nth-last-child(1) {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  font-family: "Sora", sans-serif;
 }
 
 * {

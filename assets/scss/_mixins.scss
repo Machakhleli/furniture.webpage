@@ -46,14 +46,22 @@
   background-position: $bgPosition;
 }
 @mixin setPadding($paddingTop, $paddingRight, $paddingBottom, $paddingLeft) {
-  $paddingTop: $paddingTop;
-  $paddingRight: $paddingRight;
-  $paddingBottom: $paddingBottom;
-  $paddingLeft: $paddingRight;
+  padding-top: $paddingTop;
+  padding-right: $paddingRight;
+  padding-bottom: $paddingBottom;
+  padding-left: $paddingLeft;
 }
 @mixin setMargin($marginTop, $marginRight, $marginBottom, $marginLeft) {
   margin-top: $marginTop;
   margin-right: $marginRight;
   margin-bottom: $marginBottom;
   margin-left: $marginLeft;
+}
+@mixin setButton($width, $height, $bgColor, $text-color) {
+  @include boxSize($width, $height);
+  background-color: $bgColor;
+  color: $text-color;
+  border-radius: 80px;
+  border: none;
+  
 }

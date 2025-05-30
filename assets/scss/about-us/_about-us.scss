@@ -5,20 +5,88 @@
     @include boxSize(76.25rem, 38.125rem);
     @include verticalFlex(center, center);
     max-width: 76.25rem;
-    margin: 60px auto;
+    margin: 0 auto;
     .experiecne-wrapper {
-      @include flex(space-between, center);
+      position: relative;
+      @include flex(left, center);
+      gap: 550px;
       .text-wrapper {
-        @include boxSize(610px, 264px);
+        @include boxSize(38.125rem, 16.5rem);
+        p,
+        span {
+          @include setPadding(5.5rem, 0.75rem, 2.5rem, 1rem);
+        }
         p {
           @include mainFontStyle(600, 1.25rem, 1.75rem, 0);
-          @include setPadding(0, 0.75rem, 2.5rem, 0.75rem);
           color: $thirdColor;
         }
         span {
           font-family: "Poppins", sans-serif;
-          @include mainFontStyle(400, 16px, 24px, 0);
+          @include mainFontStyle(400, 1rem, 1.5rem, 0);
           color: $secondaryColor;
+        }
+        button {
+          @include setButton(9.125rem, 2.75rem, $secondaryColor, $thirdColor);
+          &:hover {
+            cursor: pointer;
+            background-color: color($mainColor, 3%);
+            transition: ease 0.3s;
+          }
+        }
+      }
+      .experience {
+        position: absolute;
+        top: 6.25rem;
+        left: 44.375rem;
+        @include boxSize(11.1875rem, 17.9375rem);
+        @include verticalFlex(center, center);
+        background: secondaryColor(#3166843d, 45%);
+        opacity: 80%;
+        border-radius: 2rem;
+        z-index: 3;
+        &:hover {
+          transform: translateY(-0.625rem);
+          transition: ease 0.3s;
+        }
+        span {
+          @include mainFontStyle(700, 3rem, 3.4375rem, 0);
+          color: $secondaryColor;
+        }
+        p {
+          @include mainFontStyle(400, 1rem, 1.5rem, 0);
+          color: $thirdColor;
+          text-align: center;
+        }
+      }
+      .coworker > img {
+        position: absolute;
+        top: -5.5rem;
+        right: -3.125rem;
+        border-radius: 18.75rem;
+      }
+    }
+    .about-us-stats-container {
+      @include boxSize(100%, 9.75rem);
+      @include flex(space-between, center);
+      margin-top: 12.5rem;
+      .stats {
+        @include flex(center, center);
+        gap: 1.875rem;
+        > span {
+          border: 0.125rem solid$secondaryColor;
+          width: 1.5625rem;
+          height: 0;
+          border-radius: 6.1875rem;
+        }
+        div {
+          @include verticalFlex(center, center);
+          > span {
+            @include mainFontStyle(700, 3rem, 3.125rem, 0);
+            color: $thirdColor;
+          }
+          span:nth-last-child(1) {
+            @include mainFontStyle(400, 0.9375rem, 1.25rem, 0);
+          }
         }
       }
     }
