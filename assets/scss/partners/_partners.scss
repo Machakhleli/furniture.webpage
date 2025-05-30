@@ -1,0 +1,20 @@
+#partners {
+  @include boxSize(100%, auto);
+  background-color: $sectionBgColor;
+  .partners-container {
+    @include boxSize(76.25rem, 6.875rem);
+    padding-top: 6.25rem;
+    @include flex(space-between, center);
+    margin: 0 auto;
+    div {
+      @include boxSize(12.4375rem, 3.75rem);
+      @include flex(center, center);
+      color: $mainColor;
+      &:hover {
+        cursor: pointer;
+        background-color: color($thirdColor, 10%);
+        transition: ease 0.3s;
+      }
+    }
+  }
+}

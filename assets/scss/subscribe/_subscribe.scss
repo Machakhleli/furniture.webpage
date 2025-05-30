@@ -1,0 +1,80 @@
+#subscribe {
+  @include boxSize(100%, clamp(30vh, 50vh, 60vh));
+  background-color: $sectionBgColor;
+  @include flex(center, center);
+  padding: 1rem;
+  .subscribe-container {
+    position: relative;
+    @include boxSize(
+      clamp(20rem, 90vw, 76.25rem),
+      clamp(8rem, 10vh, 10.0625rem)
+    );
+    @include flex(center, center);
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    overflow: hidden;
+    .discount {
+      @include boxSize(clamp(15rem, 40%, 30.5rem), 100%);
+      @include flex(center, center);
+      background-color: $secondaryColor;
+      border-top-left-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+      p {
+        @include mainFontStyle(
+          600,
+          clamp(1rem, 1.25vw, 1.25rem),
+          clamp(1.25rem, 1.75vw, 1.75rem),
+          0
+        );
+        color: $thirdColor;
+        padding: 0 4.375rem;
+        mark {
+          background-color: transparent;
+        }
+      }
+    }
+    img {
+      position: absolute;
+      left: 29.0625rem;
+      top: 2.1875rem;
+      width: clamp(1.875rem, 7vw, 3.75rem);
+    }
+    .search {
+      @include boxSize(clamp(20rem, 60%, 45.75rem), 100%);
+      @include flex(center, center);
+      gap: clamp(0.5rem, 2vw, 1.25rem);
+      background-color: $mainColor;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      input {
+        @include boxSize(
+          clamp(12rem, 60%, 28rem),
+          clamp(2.25rem, 3vw, 2.9375rem)
+        );
+        padding: clamp(0.25rem, 0.5vw, 0.3125rem);
+        background-color: $fivethColor;
+        outline: none;
+        border: none;
+        &::placeholder {
+          color: $thirdColor;
+        }
+      }
+      button {
+        @include boxSize(
+          clamp(6rem, 20%, 8.1875rem),
+          clamp(2.25rem, 3vw, 2.75rem)
+        );
+        background-color: $secondaryColor;
+        color: $thirdColor;
+        border-radius: 5rem;
+        border: none;
+        font-size: clamp(0.875rem, 1vw, 1rem);
+        &:hover {
+          cursor: pointer;
+          background-color: $fivethColor;
+          transition: ease-out 0.3s;
+        }
+      }
+    }
+  }
+}
