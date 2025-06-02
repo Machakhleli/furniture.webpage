@@ -12,6 +12,7 @@
 @import "./about-us/_about-us";
 @import "./partners/partners";
 @import "./subscribe/subscribe";
+@import "./footer/foote";
 
 * {
   margin: 0;
@@ -22,5 +23,8 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+  li {
+    list-style: none;
   }
 }

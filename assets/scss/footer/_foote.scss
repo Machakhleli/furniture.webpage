@@ -1,0 +1,34 @@
+#footer {
+  @include boxSize(100%, auto);
+  @include flex(center, center);
+  background-color: $sectionBgColor;
+  .footer-container {
+    @include boxSize(1220px, 23.75rem);
+    @include flex(space-between, center);
+    .contact-wrapper {
+      @include boxSize(19.0625rem, 21.4375rem);
+      padding-right: 2.8594rem;
+      img {
+        @include boxSize(13.125rem, 4.5625rem);
+        padding: 0 12px 40px 12px;
+      }
+      p {
+        @include mainFontStyle(400, 1rem, 1.5rem, 0);
+        color: $fourthColor;
+        padding-bottom: 2.5rem;
+      }
+      button {
+        @include setButton(10.4375rem, 2.75rem, $mainColor, $thirdColor);
+        &:hover {
+          cursor: pointer;
+          background-color: $thirdColor;
+          color: $mainColor;
+        }
+      }
+      .payments {
+        @include boxSize(16.1875rem, 4.5625rem);
+        @include flex(center, center);
+      }
+    }
+  }
+}

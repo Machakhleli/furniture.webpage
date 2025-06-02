@@ -3,7 +3,7 @@
   height: $height;
 }
 
-@mixin flex($justify: center, $align: center) {
+@mixin flex($justify, $align) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
@@ -63,5 +63,5 @@
   color: $text-color;
   border-radius: 80px;
   border: none;
-  
+ 
 }
