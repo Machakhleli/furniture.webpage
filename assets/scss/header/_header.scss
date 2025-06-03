@@ -79,12 +79,25 @@
     @include sectionBox(clamp(18rem, 90vw, 76.25rem), 50%);
     margin: 0 auto;
     .furniture-types {
+      position: relative;
       @include boxSize(clamp(6rem, 20vw, 10.9375rem), 100%);
       @include verticalFlex(center, center);
       gap: 1rem;
-      &:hover {
-        cursor: pointer;
+      cursor: pointer;
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $thirdColor;
+        width: 800px;
+        @include flex(space-between, center);
+        &:hover .dropdown {
+          display: block;
+          cursor: pointer;
+        }
       }
+
       img {
         @include boxSize(clamp(1.5rem, 4vw, 2rem), clamp(1.5rem, 4vw, 2rem));
       }

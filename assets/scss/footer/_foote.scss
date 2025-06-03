@@ -2,33 +2,104 @@
   @include boxSize(100%, auto);
   @include flex(center, center);
   background-color: $sectionBgColor;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 3.125rem;
   .footer-container {
-    @include boxSize(1220px, 23.75rem);
-    @include flex(space-between, center);
+    @include boxSize(80%, auto);
+    @include flex(center, center);
+    flex-wrap: wrap;
+    gap: 2rem;
+    .contact-wrapper,
+    .footer-content-wrapper {
+      @include boxSize(100%, auto);
+      gap: 1.5625rem;
+      max-width: 19.0625rem;
+    }
     .contact-wrapper {
-      @include boxSize(19.0625rem, 21.4375rem);
-      padding-right: 2.8594rem;
+      @include verticalFlex(center, left);
+      padding-right: 2rem;
       img {
-        @include boxSize(13.125rem, 4.5625rem);
-        padding: 0 12px 40px 12px;
+        @include boxSize(clamp(8rem, 30vw, 13.125rem), auto);
+        padding: 0 0 2rem 0;
       }
       p {
         @include mainFontStyle(400, 1rem, 1.5rem, 0);
         color: $fourthColor;
-        padding-bottom: 2.5rem;
+        padding-bottom: 2rem;
       }
       button {
-        @include setButton(10.4375rem, 2.75rem, $mainColor, $thirdColor);
+        @include setButton(100%, 2.75rem, $mainColor, $thirdColor);
+        max-width: 10.4375rem;
         &:hover {
           cursor: pointer;
-          background-color: $thirdColor;
+          background-color: color($thirdColor, 10%);
           color: $mainColor;
         }
       }
       .payments {
-        @include boxSize(16.1875rem, 4.5625rem);
-        @include flex(center, center);
+        @include boxSize(100%, auto);
+        max-width: 16.1875rem;
+        @include flex(space-around, center);
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        li {
+          @include boxSize(2.75rem, 1.9375rem);
+          img {
+            @include boxSize(100%, 100%);
+            padding: 0;
+          }
+        }
       }
     }
+    .footer-content-wrapper {
+      @include boxSize(19.0625rem, 21.4375rem);
+      ul {
+        @include mainFontStyle(600, 12px, 18px, 0);
+        color: $ulTextColor;
+        padding: 0 0 1.25rem 0;
+        li:nth-child(1) {
+          padding-top: 1.5625rem;
+        }
+        li {
+          @include mainFontStyle(600, 0.75rem, 1.125rem, 0);
+          color: $mainColor;
+          padding: 5px 0;
+          &:hover {
+            color: $secondaryColor;
+            transition: ease 0.3s;
+          }
+        }
+      }
+      .help > li {
+        color: $secondaryColor;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-wrapper,
+  .footer-content-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .contact-wrapper {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .payments {
+    justify-content: flex-start;
+  }
+
+  .footer-content-wrapper ul li {
+    font-size: 0.6875rem;
   }
 }
