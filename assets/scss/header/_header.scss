@@ -84,20 +84,6 @@
       @include verticalFlex(center, center);
       gap: 1rem;
       cursor: pointer;
-      .dropdown {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: $thirdColor;
-        width: 800px;
-        @include flex(space-between, center);
-        &:hover .dropdown {
-          display: block;
-          cursor: pointer;
-        }
-      }
-
       img {
         @include boxSize(clamp(1.5rem, 4vw, 2rem), clamp(1.5rem, 4vw, 2rem));
       }
@@ -106,7 +92,7 @@
           clamp(2.5rem, 8vw, 3.75rem),
           clamp(0.75rem, 1.5vw, 0.875rem)
         );
-        @include flex(space-between, center);
+        @include flex(center, center);
         gap: clamp(0.25rem, 1vw, 0.625rem);
         padding-bottom: 1.5rem;
         &:hover {
