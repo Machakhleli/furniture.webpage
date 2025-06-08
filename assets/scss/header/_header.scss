@@ -84,6 +84,10 @@
       @include verticalFlex(center, center);
       gap: 1rem;
       cursor: pointer;
+      &:hover .dropdown {
+        display: block;
+      }
+
       img {
         @include boxSize(clamp(1.5rem, 4vw, 2rem), clamp(1.5rem, 4vw, 2rem));
       }
@@ -95,10 +99,6 @@
         @include flex(center, center);
         gap: clamp(0.25rem, 1vw, 0.625rem);
         padding-bottom: 1.5rem;
-        &:hover {
-          filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
-            brightness(106%) contrast(106%);
-        }
         span {
           @include primaryFont(500, clamp(0.5rem, 2vw, 0.875rem));
           color: color($mainColor, 0%);
@@ -110,24 +110,81 @@
           );
         }
       }
-    }
-    .line {
-      height: 78%;
-      border: 1px solid $sectionBgColor;
-    }
-    .sales {
-      @include boxSize(10.625rem, 77%);
-      @include verticalFlex(center, center);
-      background-color: $secondaryColor;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      gap: 0.5rem;
-      &:hover {
-        background-color: $mainColor;
-        cursor: pointer;
+      &:hover .furniture-names {
+        filter: invert(39%) sepia(94%) saturate(748%) hue-rotate(1deg)
+          brightness(106%) contrast(106%);
       }
-      span {
-        color: $thirdColor;
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: clamp(20rem, 40vw, 50rem);
+        display: none;
+        background-color: $thirdColor;
+        padding: 1rem;
+        border: 1px solid $sectionBgColor;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        gap: 0.3125rem;
+        .dropdown-items {
+          @include flex(space-evenly, left);
+          // gap: 48px;
+        }
+        ul {
+          width: 40%;
+          @include verticalFlex(center, left);
+          background-color: $thirdColor;
+          gap: 1rem;
+          li {
+            @include flex(left, center);
+            @include mainFontStyle(500, 1rem, 1.5rem, 0);
+            gap: 5px;
+            color: $mainColor;
+            img {
+              @include boxSize(10%, 10%);
+            }
+            &:hover {
+              color: $secondaryColor;
+              transition: 0.2s ease;
+            }
+            &:hover img {
+              filter: brightness(0) saturate(100%) invert(74%) sepia(18%)
+                saturate(2236%) hue-rotate(338deg) brightness(108%)
+                contrast(101%);
+            }
+          }
+          span {
+            width: 80%;
+            border: 1px solid secondaryColor($alternativeColor, 10%);
+          }
+        }
+        .items-content {
+          width: 60%;
+          @include verticalFlex(center, left);
+          gap: 10px;
+          // padding: 12px;
+          background-color: secondaryColor($fourthColor, 10%);
+        }
+      }
+      .line {
+        height: 78%;
+        border: 1px solid $sectionBgColor;
+      }
+      .sales {
+        @include boxSize(10.625rem, 77%);
+        @include verticalFlex(center, center);
+        background-color: $secondaryColor;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        gap: 0.5rem;
+        &:hover {
+          background-color: $mainColor;
+          cursor: pointer;
+        }
+        span {
+          color: $thirdColor;
+        }
       }
     }
   }
